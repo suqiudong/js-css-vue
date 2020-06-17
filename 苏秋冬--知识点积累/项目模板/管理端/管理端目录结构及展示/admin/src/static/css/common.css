@@ -1,0 +1,127 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+em {
+    font-weight: normal;
+}
+
+ul,
+li,
+u {
+    list-style: none;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+.clear::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+    zoom: 1;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a,
+button,
+input {
+    text-shadow: none;
+}
+
+textarea {
+    resize: none;
+    text-shadow: none;
+}
+
+
+/* -webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none; */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    min-width: 1024px;
+    height: 100%;
+}
+
+.el-pagination {
+    text-align: right;
+}
+
+
+/* // elementUI样式修改 */
+
+.el-dialog .el-dialog__header {
+    background: #F2F6FC;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.el-dialog .el-dialog__header span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.el-dialog .el-dialog__footer {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}

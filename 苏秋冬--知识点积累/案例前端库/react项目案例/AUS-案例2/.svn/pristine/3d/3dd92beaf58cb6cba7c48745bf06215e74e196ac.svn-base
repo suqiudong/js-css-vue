@@ -1,0 +1,18 @@
+{
+  "code": 0,
+  "result": {
+    "detail": {
+      "dashboardName": "04",
+      "desc": "",
+      "owner": "admin",
+      "createTime": "2017-01-19 15:08:32",
+      "reportList": [
+        {
+          "reportName": "æ¼æ–—å›¾"
+        }
+      ],
+      "layoutInfo": "{\"lg\":[{\"w\":4,\"h\":4,\"x\":0,\"y\":0,\"i\":\"æ¼æ–—å›¾\",\"moved\":false,\"static\":false}]}",
+      "visable": "PUBLIC"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "code": "0",
+  "result": {
+  	"detail": {
+  	"nodeNum":"12",
+  	"userNum":"10",
+  	"availableDay":"10",
+  	"status":"1"
+  	}},
+  "msg": "错了"
+}

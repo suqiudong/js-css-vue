@@ -1,0 +1,27 @@
+{
+  "code": "0",
+  "result": {
+    "data": [{
+      "resType": "dataset",
+      "resName": "dataset1",
+      "roleName": "角色1",
+      "privilege": {
+        "DATASET": ["创建", "修改", "分析"]
+      },
+      "filter": "这是dataset的 过滤器 xxx"
+    }, {
+      "roleName": "角色2",
+      "privilege": {
+        "DATASET": ["删除", "管理", "查看"]
+      },
+      "filter": "这是dataset的 过滤器 xxx"
+    }, {
+      "userName": "用户1",
+      "privilege": {
+        "DATASET": ["创建", "查看", "分析"]
+      },
+      "filter": ""
+    }]
+  },
+  "msg": ""
+}

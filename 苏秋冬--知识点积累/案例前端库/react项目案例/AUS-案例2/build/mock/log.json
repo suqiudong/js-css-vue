@@ -1,0 +1,4 @@
+{
+	"code":0,
+	"result":"2017-04-20 10:44:44,134  INFO com.sugon.aus.datain.plugin.TaskMain 35  - PID = 45323\n2017-04-20 10:44:44,142  INFO com.sugon.aus.test.Collector1 30 - Start collect.\n2017-04-20 10:44:44,142  INFO com.sugon.aus.test.Collector1 33 - Running-----122\n2017-04-20 10:44:45,146  INFO com.sugon.aus.test.Collector1 33 - Running-----121\n2017-04-20 10:44:46,146  INFO com.sugon.aus.test.Collector1 33 - Running-----120\n2017-04-20 10:44:47,149  INFO com.sugon.aus.test.Collector1 33 - Running-----119\n2017-04-20 10:44:48,149  INFO com.sugon.aus.test.Collector1 33 - Running-----118\n"
+}

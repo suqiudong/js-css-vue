@@ -1,0 +1,67 @@
+/**
+ * DataTables相关操作
+ * User: gaogy
+ * Date: 2016/12/15
+ * Time: 17:12
+ */
+function createList(options) {
+    let _options = {
+        data: options.data || [],
+        destroy: true,
+        scrollXInner: '100%',
+        dom: options.dom || '<"top"f>rt<"bottom"lip>',
+        columns: options.columns || [],
+        language: {
+            'sProcessing': '处理中...',
+            'sLengthMenu': '显示 _MENU_ 条结果',
+            'sZeroRecords': '没有匹配结果',
+            'sInfo': '显示第 _START_ 至 _END_ 条结果，共 _TOTAL_ 条',
+            'sInfoEmpty': '显示第 0 至 0 条结果，共 0 条',
+            'sInfoFiltered': '(由 _MAX_ 条结果过滤)',
+            'sInfoPostFix': '',
+            'sSearch': '搜索:',
+            'sUrl': '',
+            'sEmptyTable': '表中数据为空',
+            'sLoadingRecords': '载入中...',
+            'sInfoThousands': ',',
+            'oPaginate': {
+                'sFirst': '首页',
+                'sPrevious': '上页',
+                'sNext': '下页',
+                'sLast': '末页'
+            },
+            'oAria': {
+                'sSortAscending': ': 以升序排列此列',
+                'sSortDescending': ': 以降序排列此列'
+            }
+        },
+        'paging': options.paging && true,
+        'pageLength': options.pageLength || 10,
+        'columnDefs': options.columnDefs || '',
+        'order': options.order || [],
+        'createdRow': options.createdRow || null,
+        'searching': options.searching && true,
+        'info': options.info && true,
+        'ordering': options.ordering && true
+    };
+
+    if (options.scrollX) {
+        _options.scrollX = options.scrollX;
+    }
+    let table = $('#' + options.id).DataTable(_options);
+
+    return table;
+}
+
+// 绑定列表内事件
+function bindTableEvent (tableId, eventType, selector, handler) {
+    $('#' + tableId + ' tbody').off(eventType, selector).on(eventType, selector, handler);
+}
+
+function getTableItem (tableId) {
+    let tableItem = $('#' + tableId).DataTable().row($(this).parents('tr')).data();
+    return tableItem;
+}
+
+export default createList;
+export { bindTableEvent, getTableItem };

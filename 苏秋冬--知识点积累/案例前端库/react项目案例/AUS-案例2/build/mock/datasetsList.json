@@ -1,0 +1,975 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "datasetName": "templatetest",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:54:44",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "数据集1",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "store": "false",
+                  "fieldName": "c3",
+                  "name": "数据集2",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 97180622,
+        "size": 30750571762,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege": {
+          "DATASET": ["查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "datasetName": "test1234",
+        "owner": "admin",
+        "createTime": "2017-01-18 10:53:32",
+        "shard": 2,
+        "replication": 0,
+        "isPartition": true,
+        "status": "ONLINIE",
+        "schema": {
+          "properties": [
+            {
+              "fieldName": "c1",
+              "name": "å¤©æ‰",
+              "type": "string",
+              "index": "not_analyzed",
+              "store": "true",
+              "key": "false"
+            },
+            {
+              "fieldName": "c2",
+              "name": "hahahha2",
+              "type": "nested",
+              "schema": [
+                {
+                  "fieldName": "c3",
+                  "name": "hahahha",
+                  "type": "String",
+                  "index": "analyzed",
+                  "key": "false",
+                  "analyzer": "simple",
+                  "store": "false"
+                }
+              ],
+              "key": "true"
+            }
+          ]
+        },
+        "visable": "PRIVATE",
+        "count": 0,
+        "size": 318,
+        "privilege" :{
+          "DATASET": []
+        }
+      }
+    ]
+  }
+}

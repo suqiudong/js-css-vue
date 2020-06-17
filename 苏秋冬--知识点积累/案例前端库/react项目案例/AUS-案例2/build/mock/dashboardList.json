@@ -1,0 +1,108 @@
+{
+  "code": "0",
+  "meta": "",
+  "result": {
+    "data": [
+      {
+        "id":"r_00001",
+        "dashboardName":"仪表板010401",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 10:21:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "id":"r_00002",
+        "dashboardName":"仪表板010402",
+        "owner":"gaogy",
+        "createTime":"2016-12-14 11:27:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "id":"r_00003",
+        "dashboardName":"仪表板010403",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 12:21:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      },
+      {
+        "id":"r_00004",
+        "dashboardName":"仪表板010403",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 13:01:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改", "授权"]
+        }
+      },
+      {
+        "id":"r_00005",
+        "dashboardName":"仪表板010404",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 14:11:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      },
+      {
+        "id":"r_00006",
+        "dashboardName":"仪表板010405",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 15:30:10",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      },
+      {
+        "id":"r_00007",
+        "dashboardName":"仪表板010406",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 16:21:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      },
+      {
+        "id":"r_00008",
+        "dashboardName":"仪表板010407",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 17:21:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      },
+      {
+        "id":"r_00009",
+        "dashboardName":"仪表板010408",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 18:21:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      },
+      {
+        "id":"r_00010",
+        "dashboardName":"仪表板010409",
+        "owner":"gaogy",
+        "createTime":"2016-12-15 19:31:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      },
+      {
+        "id":"r_00011",
+        "dashboardName":"仪表板010410",
+        "owner":"gaogy",
+        "createTime":"2016-12-16 10:31:30",
+        "privilege": {
+          "DASHBOARD": ["分析", "查看", "删除", "修改"]
+        }
+      }
+    ]
+  },
+  "msg": ""
+}

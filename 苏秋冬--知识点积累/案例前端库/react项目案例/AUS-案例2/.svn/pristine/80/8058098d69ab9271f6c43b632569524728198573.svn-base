@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>XData-AUS平台</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/select2/select2.min.css" rel="stylesheet">
+    <link href="/static/admin-lte/css/AdminLTE.min.css" rel="stylesheet">
+    <link href="/static/admin-lte/css/skins/_all-skins.min.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/datatables/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/static/noty/noty.min.css" rel="stylesheet">
+    <link href="/static/noty/animate.min.css" rel="stylesheet">
+    <link href="/static/datarangePicker/daterangepicker.min.css" rel="stylesheet">
+    <link href="/static/iCheck/css/blue.min.css" rel="stylesheet">
+    <link href="/static/qtip/jquery.qtip.min.css" rel="stylesheet">
+    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+    <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+    {% } %}
+    <style>
+        #jobDetail .dataTable td, #log .dataTable td{
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: initial !important;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div id="app"></div>
+
+<script src="/static/jquery.min.js"></script>
+<script src="/static/md5/md5.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/admin-lte/js/app.min.js"></script>
+<script src="/static/datatables/jquery.dataTables.min.js"></script>
+<script src="/static/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/static/easyui/js/jquery.easyui.min.js"></script>
+<script src="/static/noty/jquery.noty.packaged.min.js"></script>
+<script src="/static/datarangePicker/moment.min.js"></script>
+<script src="/static/datarangePicker/daterangepicker.min.js"></script>
+<script src="/static/select2/select2.min.js"></script>
+<script src="/static/select2/i18n/zh-CN.js"></script>
+<script src="/static/iCheck/icheck.min.js"></script>
+<script src="/static/qtip/jquery.qtip.min.js"></script>
+<script src="/static/validate/validate.min.js"></script>
+{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+<script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+{% } %}
+</body>
+</html>

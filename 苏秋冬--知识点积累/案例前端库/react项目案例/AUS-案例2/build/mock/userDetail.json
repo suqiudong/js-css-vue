@@ -1,0 +1,29 @@
+{
+  "code": 0,
+  "result": {
+    "detail": {
+      "userName": "admin",
+      "password": "21232F297A57A5A743894A0E4A801FC3",
+      "quickLink": "04;",
+      "email": "12345@1.com",
+      "phoneNo": "1234567890100",
+      "status": "ACTIVE",
+      "privilege": {
+        "REPORT": ["创建", "分析", "删除"],
+        "DASHBOARD": ["创建", "分析", "删除", "修改"],
+        "DATASET": ["创建", "查看", "修改", "删除"],
+        "JOB": ["创建", "查看", "分析", "删除", "执行"],
+        "PLUGIN": ["创建", "查看", "上传", "删除"],
+        "USER": ["创建", "查看", "重置密码"],
+        "ROLE": ["创建", "查看", "修改", "删除"]
+      },
+      "department": "SSD",
+      "position": "SE111",
+      "name": "lxgxx",
+      "createTime": "2016-12-26 11:37:50",
+      "roleName": [
+        "ç®¡ç†å‘˜"
+      ]
+    }
+  }
+}

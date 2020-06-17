@@ -1,0 +1,107 @@
+{
+  "code": "0",
+  "result": {
+    "data" : [
+      {
+        "pluginName":"插件2",
+        "jarName":"jar名字2",
+        "owner":"李四",
+        "time":"2017：02：16-10：13",
+        "version":"V0.01",
+        "status":"INTALLLED",
+        "collectors": [
+          {
+            "collectorName": "Collector测试3",
+            "clazzName": "com.sugon.aus.test.Collector3",
+            "description": "desc",
+            "props": [
+              {
+                "key": "用户名",
+                "value": "123",
+                "propType": "TEXT",
+                "desc": "desc_username",
+                "needed": "true"
+              },
+              {
+                "key": "密码",
+                "value": "123",
+                "propType": "PASSWORD",
+                "desc": "desc_password",
+                "needed": "true"
+
+              },
+              {
+                "key": "时间",
+                "value": "2017：02：16-10：13",
+                "propType": "DATETIME",
+                "desc": "desc_password",
+                "needed": "true"
+              }
+            ]
+          },
+          {
+            "collectorName": "Collector测试4",
+            "clazzName": "com.sugon.aus.test.Collector4",
+            "description": "desc",
+            "props": [
+              {
+                "key": "用户名",
+                "value": "1234",
+                "propType": "TEXT",
+                "desc": "desc_username",
+                "needed": "true"
+              },
+              {
+                "key": "pas.ww",
+                "value": "1234",
+                "propType": "PASSWORD",
+                "desc": "desc_password",
+                "needed": "true"
+              },
+              {
+                "key": "des.cc",
+                "value": "124443",
+                "propType": "TEXTAREA",
+                "desc": "desc_password"
+              }
+            ]
+          }
+        ],
+        "privilege": {
+          "PLUGIN": ["卸载", "修改", "授权", "查看"]
+        }
+      },
+      {
+        "pluginName":"插件3",
+        "jarName":"jar名字3",
+        "owner":"王五",
+        "time":"2017：02：16-10：14",
+        "version":"V0.01",
+        "privilege": {
+          "PLUGIN": ["卸载", "修改", "授权", "查看"]
+        }
+      },
+      {
+        "pluginName":"插件4",
+        "jarName":"jar名字4",
+        "owner":"赵六",
+        "time":"2017：02：16-10：16",
+        "version":"V0.01",
+        "privilege": {
+          "PLUGIN": ["卸载", "修改", "授权", "查看"]
+        }
+      },
+      {
+        "pluginName":"插件5",
+        "jarName":"jar名字5",
+        "owner":"哈哈",
+        "time":"2017：02：16-10：16",
+        "version":"V0.01",
+        "privilege": {
+          "PLUGIN": ["卸载", "修改", "授权", "查看"]
+        }
+      }
+    ]
+  },
+  "msg" : "错了"
+}

@@ -1,0 +1,8 @@
+{
+  "code": "0",
+  "meta": "",
+  "result": {
+    "data": ["not_analyzed", "standard", "simple", "whitespace ", "stop", "keyword", "pattern", "fingerprint"]
+  },
+  "msg": ""
+}

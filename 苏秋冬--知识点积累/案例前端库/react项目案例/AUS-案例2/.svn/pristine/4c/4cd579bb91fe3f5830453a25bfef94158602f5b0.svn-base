@@ -1,0 +1,61 @@
+{
+	"code": 0,
+	"result":{
+		"detail":{
+			"jobName": "jobxxx",
+			"owner": "ownerxxx",
+			"description": "description xxxx",
+			"pluginName": "插件1",
+			"jarName":"jarName名字",
+			"collectorName": "Collector测试",
+			"clazzName": "com.sugon.xxxx",
+			"createDate": "2017-01-01 12:01:01",
+			"startTriggerTime": "2017-01-01 12:01:01",
+			"endTriggerTime": "2017-02-01 12:02:02",
+			"cronExpression": "* * * * *",
+			"schStatus": "OFF",
+			"scheduleStrategy":"ONCE",
+			"misfireStrategy": "FIRE_ALL_MISSED",
+			"concurrent": false,
+			"specialProps": [
+								{
+									"key": "用户名",
+									"value": "123",
+									"propType": "TEXT",
+									"desc": "desc_username"
+								},
+								{
+									"key": "密码",
+									"value": "123",
+									"propType": "PASSWORD",
+									"desc": "desc_password"
+								},
+								{
+									"key": "数据集",
+									"value": "test1234",
+									"propType": "SELECT_AUS_DATASETS",
+									"desc": "desc_password"
+								},
+								{
+									"key": "time",
+									"value": "2017-03-07 11:58:33",
+									"propType": "DATETIME",
+									"desc": "desc_password"
+								},
+								{
+									"key": "描述信息",
+									"value": "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈安徽啊哈好啊哈哈啊哈哈哈安徽哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈安徽啊哈好啊哈哈啊哈哈哈安徽哈哈",
+									"propType": "TEXTAREA",
+									"desc": "desc_password"
+								}
+							],
+			"doneOffset": "20171222",
+			"assignedNode": "node1",
+			"lastStartTime": "yyyy-MM-dd HH:hh:ss",
+			"lastSpendSecond": 1000,
+			"logFilePath": "task/lc_01/20170330115610033.log",
+			"lastSpendSecond": 1,
+			"lastResult": "SUCCEED"
+		}
+	}
+}

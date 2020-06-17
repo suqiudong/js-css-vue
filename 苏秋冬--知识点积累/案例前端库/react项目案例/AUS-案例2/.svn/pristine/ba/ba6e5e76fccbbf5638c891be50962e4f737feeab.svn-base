@@ -1,0 +1,134 @@
+/**
+ *插件添加组件
+ * User: jiaomx
+ * Date: 2017/02/16
+ * Time: 14:20
+ */
+
+import React, { Component } from 'react';
+import { error, success } from 'UTIL/notification';
+class PluginAdd extends Component {
+	constructor(props) {
+        super(props);
+        this.returnHander = this.returnHander.bind(this);
+        this.installHander = this.installHander.bind(this);
+    }
+    componentDidMount() {
+        let that = this;
+        $('#upload').uploadFile({
+            url: '/PluginManager/upload',
+            maxFileCount: 1,
+            showDone: false,
+            showPreview: false,
+            dragDrop: false,
+            showProgress: true,
+            showFileCounter: false,
+            fileName: 'pluginFile',
+            uploadStr: '插件上传',
+            abortStr: '移除',
+            cancelStr: '取消',
+            returnType: 'json',
+            showQueueDiv: 'output',
+            onSuccess(files, xhr) {
+                $('.ajax-file-upload-container').hide();
+                if (xhr.code == 0) {
+                    success('上传成功！');
+                    $('#output').empty();
+                    $('.uploadbtn').hide();
+                    $('.uploadfilename').append(files[0]);
+                     that.props.pluginFileInfo(xhr);
+                } else if (xhr.code == '302') {
+                    error(xhr.msg);
+                    setTimeout(function() {
+                        sessionStorage.removeItem('XDataUserName');
+                        sessionStorage.removeItem('userRolePermission');
+                        window.location.replace('/');
+                    }, 1000);
+                } else {
+                    error(xhr.msg);
+                    $('.uploadbtn').show();
+                    // setTimeout(() => {window.location.reload()}, 1000);
+                }
+            },
+            onError() {
+                error('上传失败！');
+                $('.ajax-file-upload-container').hide();
+                $('#output').empty();
+            }
+        });
+    }
+
+    uploadHandler(e) {
+        e.stopPropagation();
+        $('#upload input').click();
+    }
+
+    returnHander() {
+        this.props.history.replace('/plugin');
+    }
+
+    installHander() {
+        // let that = this;
+        let install = this.props.pluginManage.fileInfo.result;
+        this.props.pluginInstall(install, this.returnHander.bind(this));
+        // if (this.props.pluginManage.isInstall.code == 0) {
+        //     setTimeout(() => {that.props.history.replace('/plugin')}, 1000);
+        // }
+    }
+	render() {
+        let tpl;
+        let returnButton;
+        if (this.props.pluginManage.fileInfo.code == 0) {
+            returnButton = '';
+            tpl = <div className="box box-primary">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="box-header">
+                                <h4>插件详细信息</h4>
+                            </div>
+                            <div className="box-body">
+                                <p><span>插件名：</span><span>{this.props.pluginManage.fileInfo.result.pluginName}</span></p>
+                                <p><span>jar包名：</span><span>{this.props.pluginManage.fileInfo.result.jarName}</span></p>
+                                <p><span>所有者：</span><span>{this.props.pluginManage.fileInfo.result.owner}</span></p>
+                                <p><span>开发者：</span><span>{this.props.pluginManage.fileInfo.result.developer}</span></p>
+                                <p><span>描述信息：</span><span>{this.props.pluginManage.fileInfo.result.description}</span></p>
+                                <p><span>版本号：</span><span>{this.props.pluginManage.fileInfo.result.version}</span></p>
+                                <div style={{marginTop: '20px'}}>
+                                    <button type="submit" className="btn btn-primary" style={{marginRight: '20px'}} onClick={ this.returnHander}>返回</button>
+                                    <button type="submit" className="btn btn-primary" onClick={ this.installHander}>安装</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        } else {
+            returnButton = <button type="submit" className="btn btn-primary" onClick={ this.returnHander}>返回</button>
+        }
+		return (
+			<div id="pluginAdd">
+                <div className="box box-primary">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="box-header">
+                                <h4>上传插件</h4>
+                                <div className="uploadStr" onClick={this.uploadHandler}>
+                                    <span className="uploadfilename"></span>
+                                    <div className="uploadbtn">
+                                        <i className="fa fa-upload"></i> 点击上传插件
+                                    </div>
+                                    <div id="upload"></div>
+                                </div>
+                                <div id="output"></div>
+                            </div>
+                            <div className="box-body">
+                                {returnButton}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {tpl}
+            </div>
+		)
+	}
+}
+export default PluginAdd;

@@ -1,0 +1,212 @@
+/**
+ *作业详情组件
+ * User: jiaomx
+ * Date: 2017/03/01
+ * Time: 19:58
+ */
+import React, { Component } from 'react';
+import Modal from 'COMPONENT/Common/Modal/Modal';
+import createList, { bindTableEvent } from 'UTIL/baseList';
+class JobDetail extends Component {
+	constructor(props) {
+        super(props);
+        this.returnHandler = this.returnHandler.bind(this);
+        this.createTable = this.createTable.bind(this);
+        this.tableInfor = this.tableInfor.bind(this);
+        this.logFilePathHandle = this.logFilePathHandle.bind(this);
+        this.onlineOKHandler = this.onlineOKHandler.bind(this);
+        this.offlineOKHandler = this.offlineOKHandler.bind(this);
+    }
+
+    componentWillMount() {
+        // 读取作业信息
+        // let jobName = this.props.jobManage.selectJobDate.jobName;
+        let jobName = this.props.params.jobName;
+        this.props.readJobinfor(jobName);
+    }
+
+    componentDidMount() {
+        //
+    }
+
+    componentDidUpdate() {
+        this.tableInfor(this.props.jobManage.jobInfor.result.detail);
+    }
+
+    tableInfor(data) {
+        const once = 'ONCE';
+        data.triggerTime = data.startTriggerTime + (data.scheduleStrategy === once ? '' : ' - ' + data.endTriggerTime);
+        data.description = data.description.replace(/\n/g, '<br/>');
+        switch (data.misfireStrategy) {
+            case 'DO_NOTHING':
+                data.misfireStrategy = '错过不执行';
+                break;
+            case 'FIRE_ONCE_NOW':
+                data.misfireStrategy = '错过执行一次';
+                break;
+            case 'FIRE_ALL_MISSED':
+                data.misfireStrategy = '错过执行所有';
+                break;
+        }
+        let data1 = [
+            {key: '作业名称', value: data.jobName},
+            {key: '所有者', value: data.owner},
+            {key: '描述信息', value: data.description},
+            {key: '触发时间', value: data.triggerTime},
+            {key: '调度周期表达式', value: data.cronExpression},
+            {key: '错过执行策略', value: data.misfireStrategy},
+            {key: '插件名', value: data.pluginName},
+            {key: 'jar包名', value: data.jarName},
+            {key: '采集器名', value: data.collectorName},
+            {key: '采集器class名', value: data.clazzName}
+            // 当前版本为单点模式，后台注释了此功能，下一版集群模式下打开
+            // {key: '节点IP', value: data.assignedNode}
+        ];
+        this.createTable('jobInfor', data1);
+
+        let data2 = [];
+        for (let i = 0; i < data.specialProps.length; i++) {
+            // 密码隐藏
+            if (data.specialProps[i].propType == 'PASSWORD') {
+                data.specialProps[i].value = '';
+            }
+            if (data.specialProps[i].propType == 'TEXTAREA') {
+                data.specialProps[i].value = data.specialProps[i].value.replace(/\n/g, '<br />');
+            }
+            let obj = {};
+            obj.key = data.specialProps[i].key;
+            obj.value = data.specialProps[i].value;
+            data2.push(obj);
+        }
+        this.createTable('specialProps', data2);
+        for (let i = 0; i < data.specialProps.length; i++) {
+            if (data.specialProps[i].key == '描述信息') {
+                let tdWidth = $('#jobInfor tbody tr').eq(1).children('td').eq(1).width();
+                $('#specialProps tbody tr').eq(4).children('td').eq(1).css({display: 'block', width: tdWidth, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'})
+                $('#specialProps tbody tr').eq(4).children('td').eq(1).attr({'title': data.specialProps[i].value})
+            }
+        }
+        let logFilePath = data.logFilePath != undefined ? '<a href="javascript:void(0);" class="logFilePath">' + data.logFilePath + '</a>' : '-';
+        let lastSpendSecond = data.lastSpendSecond != undefined ? data.lastSpendSecond + ' (s)' : '-';
+        let lastResult = data.lastResult == 'SUCCEED' ? '成功' : data.lastResult == 'FAILED' ? '失败' : data.lastResult == 'KILLED' ? '已停止' : '-';
+        let data3 = [
+            {key: '上次作业日志路径', value: logFilePath},
+            {key: '上次作业执行耗时', value: lastSpendSecond},
+            {key: '上次作业执行时间', value: data.lastStartTime},
+            {key: '上次作业执行结果', value: lastResult}
+        ];
+        this.createTable('JobExeInfor', data3);
+
+    }
+
+
+
+    createTable(id, data) {
+
+        // 构造列表配置项
+        let tableConfig = {};
+
+        tableConfig.id = id;
+
+        // 定义用户列字段数据
+        tableConfig.columns = [
+            { data: 'key', 'defaultContent': '-' },
+            { data: 'value', 'defaultContent': '-' }
+        ];
+        tableConfig.scrollX = false;
+
+        // 定义搜索
+        tableConfig.searching = false;
+        
+        // 是否分页
+        tableConfig.paging = false;
+        
+        // 是否左下角的信息
+        tableConfig.info = false;
+
+        // 是否排序
+        tableConfig.ordering = false;
+
+        // 获取用户列表内数据列
+        tableConfig.data = data;
+
+        // 生成插件列表
+        createList(tableConfig);
+         // 上次作业查看日志
+        bindTableEvent('JobExeInfor', 'click', 'a.logFilePath', this.logFilePathHandle);
+
+    }
+    
+    logFilePathHandle() {
+        let jobName = this.props.jobManage.jobInfor.result.detail.jobName;
+        this.props.logFile(jobName);
+        if (this.props.jobManage.log.code == 0) {
+            $('#logFilePath').modal();
+            this.refs.logFilePath.setContent(this.props.jobManage.log.result);
+        }
+    }
+
+    returnHandler() {
+        this.props.history.replace('/job');
+    }
+
+    onlineOKHandler() {
+        let jobName = this.props.jobManage.jobInfor.result.detail.jobName;
+        this.props.jobOnline(jobName);
+        this.props.readJobinfor(jobName);
+    }
+
+    offlineOKHandler() {
+        let jobName = this.props.jobManage.jobInfor.result.detail.jobName;
+        this.props.jobOffline(jobName);
+        this.props.readJobinfor(jobName);
+    }
+
+	render() {
+        let arr = [{title: '基本信息', id: 'jobInfor'}, {title: '采集器特有配置信息', id: 'specialProps'}, {title: '上次作业执行信息', id: 'JobExeInfor'}];
+        let tpl = arr.map((ele) => {
+            return (
+                <div>
+                    <h4>{ele.title}</h4>
+                    <div className="box-body">
+                        <table id={ele.id} className="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>名称</th>
+                                    <th>信息</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                )
+        });
+
+        let button;
+        let schStatus = this.props.jobManage.jobInfor.result.detail.schStatus;
+        if (schStatus == 'OFF') {
+            button = <button type="button" className="btn btn-primary margin" onClick={this.onlineOKHandler}>上线</button>;
+        }else if (schStatus == 'ON') {
+            button = <button type="button" className="btn btn-primary margin" onClick={this.offlineOKHandler}>下线</button>;
+        }else {
+            button = '';
+        }
+
+        return (
+            <div id="jobDetail" className="row">
+                <div className="col-md-12 col-sm-12">
+                    <div className="box box-body box-primary">
+                        {tpl}
+                        <div className="box-button col-md-12">
+                            <button className="btn btn-primary" onClick={this.returnHandler}>返回</button>
+                            {button}
+                        </div>
+                    </div>
+                </div>
+                <Modal modalId="logFilePath" ref='logFilePath' title="日志信息" button='oneButton'/>
+            </div>
+
+		)
+	}
+}
+export default JobDetail;

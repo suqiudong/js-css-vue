@@ -1,0 +1,53 @@
+{
+  "code":"0",
+  "result":{
+      "detail":{
+        "dataSourceName": "mysql-a",
+        "dataSourceType": "mysql",
+        "description": "test",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime":"yyyy-MM-dd hh:mm:ss",
+        "connectionConfig":{
+          "pwd": "120,29,212,137,64,14,12,18,204,44,6,205,208,124,241,213,189,102,152,26,107,78,120,102,215,92,56,44,219,251,38,27,189,102,152,26,107,78,120,102,215,92,56,44,219,251,38,27",
+          "url": "225,179,75,16,191,72,106,17,141,118,106,54,101,94,72,112,208,187,178,113,252,216,198,101,222,155,135,60,174,191,111,225,24,154,8,54,210,61,120,77,3,9,242,232,136,215,252,128,123,207,164,141,170,136,114,129,72,225,91,24,230,243,202,234,163,241,173,117,152,155,29,141,250,235,139,74,7,0,174,21,189,102,152,26,107,78,120,102,215,92,56,44,219,251,38,27,189,102,152,26,107,78,120,102,215,92,56,44,219,251,38,27",
+          "user": "234,38,85,24,231,175,84,105,20,186,161,11,113,187,18,55,,,,,,"
+        },
+        "schemaModule": {
+            "dataBaseName1":  [
+                    {
+                      "tableName":  "tb1" ,
+                      "columns": {
+                          "columnName1": "columnType",
+                          "columnName2": "columnType"
+                       }
+                    },
+                    {
+                        "tableName":  "tb2" ,
+                        "columns": {
+                          "columnName1": "columnType",
+                          "columnName2": "columnType"
+                        }
+                    }
+                ] ,
+            "dataBaseName2":  [
+                {
+                  "tableName":  "tb3" ,
+                  "columns": {
+                      "columnName1": "columnType",
+                      "columnName2": "columnType"
+                  }
+                },
+                {
+                  "tableName":  "tb4" ,
+                  "columns": {
+                        "columnName1": "columnType",
+                        "columnName2": "columnType"
+                  }
+                }
+            ]
+        }
+    }
+  },
+  "msg": ""
+}

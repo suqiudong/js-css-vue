@@ -1,0 +1,101 @@
+/**
+ * 显示结果集
+ * User: xiongjie
+ * Date: 2017/8/5
+ * Time: 15:45
+ * */
+
+import React, { Component } from 'react';
+import createList from 'UTIL/baseList';
+import dataSourceModelService from 'SERVICE/dataSourceModelService';
+import {encodeSMS4} from 'UTIL/sm4';
+import { error} from 'UTIL/notification';
+import { cutStr } from 'UTIL/util';
+
+const key = '2C023A86BD32812A4C180A7152EEBF0A';
+export default class ResultSet extends Component {
+    constructor(props) {
+        super(props);
+        this.ResultSet = this.ResultSet.bind(this);
+        this.createdataViewList = this.createdataViewList.bind(this);
+    }
+    // 生成结果集
+    createdataViewList(data = [], keys = []) {
+        // 构造列表配置项
+        let tableConfig = {};
+        let columns = [];
+        tableConfig.id = 'dataViewList';
+        tableConfig.columns = columns;
+        // tableConfig.scrollX = true;
+        tableConfig.searching = false;
+        for (let i = 0; i < keys.length; i++) {
+            let key = keys[i];
+            columns.push({
+                data: key,
+                'render': function (data, type, row) {
+                    let dashboardName = row[key] || '';
+                    let html = `<span style="cursor: pointer;" title="${dashboardName}" > ${ cutStr(dashboardName, 70) }</span> `;
+                    return html;
+                },
+                'defaultContent': '-'
+            });
+        }
+        // 获取列表内数据列
+        tableConfig.data = data;
+        // 生成列表
+        createList(tableConfig);
+    }
+    // 显示结果集
+    ResultSet(data) {
+        if (data) {
+            let sql = {
+                sql: encodeSMS4(data, key).join(','),
+                limit: 20
+            };
+            (async ()=>{
+                let result = await dataSourceModelService.getPlanResult(sql);
+                if (result) {
+                    // 生成结果集
+                    if (result.length > 0) {
+                        let keys = [];
+                        $('#dataViewList thead tr').empty();
+                        for (let i in result[0]) {
+                            $('#dataViewList thead tr').append(`<th>${i}</th>`);
+                            keys.push(i);
+                        }
+                        this.createdataViewList(result, keys);
+                    } else {
+                        $('.popBody').append(`<p>显示结果集为空</p>`);
+                    }
+                }
+                $(' #ResultSet').modal();
+            })()
+        } else {
+            error('请关联字段后在显示结果集');
+        }
+    }
+    render() {
+        return <div className='modal in' id='ResultSet'>
+            <div className='modal-dialog'>
+                <div className='modal-content'>
+
+                    <div className='modal-header'>
+                        <button type='button' className='close' data-dismiss='modal' aria-label='Close' onClick={this.closeModal}>
+                            <span aria-hidden='true'>×</span>
+                        </button>
+                        <h4 className='modal-title'>显示结果集</h4>
+                    </div>
+                    <div className='modal-body popBody'>
+                        <table id='dataViewList' className="table table-striped table-bordered">
+                            <thead>
+                            <tr></tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div className='modal-footer'></div>
+                </div>
+            </div>
+        </div>;
+    }
+}
+

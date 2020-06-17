@@ -1,0 +1,170 @@
+/**
+ *插件添加组件
+ * User: jiaomx
+ * Date: 2017/02/16
+ * Time: 14:20
+ */
+
+import React, { Component } from 'react';
+import { error, success } from 'UTIL/notification';
+class DriverAdd extends Component {
+	constructor(props) {
+        super(props);
+        this.returnHander = this.returnHander.bind(this);
+        this.installHander = this.installHander.bind(this);
+        this.inputName = this.inputName.bind(this);
+    }
+    componentDidMount() {
+
+    }
+
+    inputName() {
+        let driverName = $('#driverName').val();
+        let description = $('#description').val();
+        let that = this;
+        $('#upload').uploadFile({
+            url: '/DriverManager/upload',
+            maxFileCount: 1,
+            showDone: false,
+            showPreview: false,
+            dragDrop: false,
+            formData: {
+                driverName: driverName,
+                description: description
+            },
+            autoSubmit: true,
+            showProgress: true,
+            showFileCounter: false,
+            acceptFiles: 'aplication/zip',
+            fileName: 'driverFile',
+            uploadStr: '插件上传',
+            abortStr: '移除',
+            cancelStr: '取消',
+            returnType: 'json',
+            extErrorStr: '文件上传错误，只接受扩展名为：*.zip 的文件',
+            showQueueDiv: 'output',
+            onSuccess(files, xhr) {
+                $('.ajax-file-upload-container').hide();
+                if (xhr.code == 0) {
+                    success('上传成功！');
+                    $('#output').empty();
+                    $('.uploadbtn').hide();
+                    $('.uploadfilename').append('上传文件名： ' + files[0]);
+                    that.props.driverFileInfo(xhr);
+                } else if (xhr.code == '302') {
+                    error(xhr.msg);
+                    setTimeout(function() {
+                        sessionStorage.removeItem('XDataUserName');
+                        sessionStorage.removeItem('userRolePermission');
+                        window.location.replace('/');
+                    }, 1000);
+                } else {
+                    error(xhr.msg);
+                    $('.uploadbtn').show();
+                    // setTimeout(() => {window.location.reload()}, 1000);
+                }
+            },
+            onError() {
+                error('上传失败！');
+                $('.ajax-file-upload-container').hide();
+                $('#output').empty();
+            }
+        });
+    }
+    uploadHandler(e) {
+        e.stopPropagation();
+        if ($('#driverName').val().trim() == '') {
+            error('请输入驱动名 ！');
+            return;
+        } else if (!/^[a-zA-Z][\w_]*$/.test($('#driverName').val())) {
+            error('驱动名格式必须为：字母+(字母、数字、下划线) ！');
+            return;
+        }
+        $('#upload input').click();
+    }
+
+    returnHander() {
+        this.props.history.replace('/driver');
+    }
+
+    installHander() {
+        // let that = this;
+        let install = this.props.driverManage.fileInfo.result;
+        this.props.driverInstall(install, this.returnHander.bind(this));
+        // if (this.props.driverManage.isInstall.code == 0) {
+        //     setTimeout(() => {that.props.history.replace('/driver')}, 1000);
+        // }
+    }
+	render() {
+        let state = '';
+        let tpl;
+        let returnButton;
+        if (this.props.driverManage.fileInfo.code == 0) {
+            $('.uploadStr').css('background', 'rgba(12, 11, 11, 0.07)');
+            state = <div style={{fontSize: '16px'}}><p>上传状态：成功</p><p>安装状态：成功</p></div>;
+            returnButton = '';
+            tpl = <div className="row">
+                        <div className="col-md-12">
+                            <div>
+                                <button type="submit" className="btn btn-primary" style={{marginRight: '20px'}} onClick={ this.returnHander}>返回</button>
+                                {/*
+                                 <button type="submit" className="btn btn-primary" onClick={ this.installHander}>安装</button>
+                                */}
+                            </div>
+                        </div>
+                    </div>
+        } else {
+            returnButton = <button type="submit" className="btn btn-primary" onClick={ this.returnHander }>返回</button>
+        }
+		return (
+			<div id="pluginAdd">
+                <div className="box box-primary" >
+                    <div className="box-header with-border ">
+                        <p className="box-title">基本信息</p>
+                    </div>
+                    <div className="box-body">
+                        <div className="row">
+                            <div className="driverNameDiv col-md-6 form-group">
+                                <label htmlFor="driverName" ><span className="identify">* </span>驱动名 : </label><span className="messages"></span>
+                                <input type="text" id="driverName" name="driverName" className="form-control" placeholder="驱动名唯一且格式必须为：字母+(字母、数字、下划线)" />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="descDiv col-md-8 form-group">
+                                <label>描述: </label><span className="messages"></span>
+                                <textarea style={{maxWidth: '1083px'}} placeholder="添加对该驱动的描述" name="description" id="description" className="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="box box-primary">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="box-header with-border">
+                                <p className="box-title">上传插件</p>
+                            </div>
+                            <div className="box-body">
+                                <div className="uploadStr" onClick={this.uploadHandler}>
+                                    <div style={{paddingLeft: '15px'}}>
+                                        <p className="uploadfilename"></p>
+                                        {state}
+                                    </div>
+                                    <div className="uploadbtn" onMouseOver={this.inputName} style={{marginTop: '-10px'}}>
+                                        <i className="fa fa-upload"></i> 点击上传并安装插件
+                                    </div>
+                                    <div id="upload"></div>
+                                </div>
+                                <div id="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {tpl}
+                <div>
+                    {returnButton}
+                </div>
+            </div>
+		)
+	}
+}
+export default DriverAdd;

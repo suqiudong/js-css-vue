@@ -1,0 +1,38 @@
+/**
+ * 仪表板列表
+ * User: gaogy
+ * Date: 2017/1/4
+ * Time: 10:30
+ */
+import React, { Component } from 'react';
+
+class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentWillMount() {
+    }
+
+    componentDidUpdate() {
+    }
+
+    onload() {
+        var iframe = document.getElementById('subject');
+        try {
+            var bHeight = iframe.contentWindow.document.body.scrollHeight;
+            var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            iframe.height = Math.max(bHeight, dHeight);
+        }catch (e) {}
+
+    }
+
+    render() {
+        return (
+            <div>
+                <iframe id="subject" src="/uas/subject/index.jsp" scrolling="no" frameborder="0" width="100%" border="0" onLoad={this.onload}></iframe>
+            </div>
+        )
+    }
+}
+export default Dashboard;

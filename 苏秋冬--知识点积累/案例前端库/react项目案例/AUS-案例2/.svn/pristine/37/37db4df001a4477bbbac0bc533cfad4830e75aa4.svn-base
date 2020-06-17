@@ -1,0 +1,97 @@
+{
+	"code": "0",
+	"result": {
+		 "data" : [
+		   {
+				"jobName": "jobxxx",
+				"owner": "ownerxxx",
+				"createDate": "yyyy-MM-dd HH:hh:ss",
+				"schStatus": "ON",
+				"scheduleStrategy":"CYCLE",
+				"runStatus": "RUNNING",
+				"validStatus":"VALID",
+				"pluginStatus":"INSTALLED",
+				"misfireStrategy": "EXECUTE_NEXTTIME",
+				"concurrent": false,
+				"lastStartTime": "yyyy-MM-dd HH:hh:ss",
+				"lastSpendSecond": 0,
+			   "privilege": {
+				 "JOB": ["查看", "删除", "修改", "授权", "操作"]
+			   }
+			},
+			{
+				"jobName": "jobxxx2",
+				"owner": "ownerxxx2",
+				"createDate": "yyyy-MM-dd HH:hh:ss",
+				"schStatus": "OFF",
+				"scheduleStrategy":"CYCLE",
+				"runStatus": "READY",
+				"validStatus":"VALID",
+				"pluginStatus":"INSTALLED",
+				"misfireStrategy": "EXECUTE_NEXTTIME",
+				"concurrent": false,
+				"lastStartTime": "yyyy-MM-dd HH:hh:ss",
+				"lastSpendSecond": 0,
+				"lastResult":"SUCCESS",
+			  "privilege": {
+				"JOB": ["查看", "删除", "修改", "授权", "操作"]
+			  }
+			},
+			{
+				"jobName": "jobxxx3",
+				"owner": "ownerxxx3",
+				"createDate": "yyyy-MM-dd HH:hh:ss",
+				"schStatus": "ON",
+				"scheduleStrategy":"ONCE",
+				"runStatus": "RUNNING",
+				"validStatus":"VALID",
+				"pluginStatus":"INSTALLED",
+				"misfireStrategy": "EXECUTE_NEXTTIME",
+				"concurrent": false,
+				"lastStartTime": "yyyy-MM-dd HH:hh:ss",
+				"lastSpendSecond": 0,
+				"lastResult":"SUCCESS",
+			  "privilege": {
+				"JOB": ["查看", "删除", "修改", "授权", "操作"]
+			  }
+			},
+			{
+				"jobName": "jobxxx4",
+				"owner": "ownerxxx4",
+				"createDate": "yyyy-MM-dd HH:hh:ss",
+				"schStatus": "ON",
+				"scheduleStrategy":"CYCLE",
+				"runStatus": "RUNNING",
+				"validStatus":"INVALID",
+				"pluginStatus":"UPDATING",
+				"misfireStrategy": "EXECUTE_NEXTTIME",
+				"concurrent": false,
+				"lastStartTime": "yyyy-MM-dd HH:hh:ss",
+				"lastSpendSecond": 0,
+				"lastResult":"SUCCESS",
+			  "privilege": {
+				"JOB": ["查看", "删除", "修改", "授权", "操作"]
+			  }
+			},
+			{
+				"jobName": "jobxxx5",
+				"owner": "ownerxxx5",
+				"createDate": "yyyy-MM-dd HH:hh:ss",
+				"schStatus": "ON",
+				"scheduleStrategy":"CYCLE",
+				"runStatus": "READY",
+				"validStatus":"INVALID",
+				"pluginStatus":"UPDATING",
+				"misfireStrategy": "EXECUTE_NEXTTIME",
+				"concurrent": false,
+				"lastStartTime": "yyyy-MM-dd HH:hh:ss",
+				"lastSpendSecond": 0,
+				"lastResult":"SUCCESS",
+			  "privilege": {
+				"JOB": ["查看", "删除", "修改", "授权", "操作"]
+			  }
+			}
+			]
+	},
+	"msg" : "错了"
+}

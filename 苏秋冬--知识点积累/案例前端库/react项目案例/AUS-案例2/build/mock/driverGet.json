@@ -1,0 +1,11 @@
+{
+	"code": "0",
+	"result": {
+		"detail": {
+			"driverName": "driver_for_typhoon",
+			"description": "描述",
+			"owner": "所有者",
+			"time": "安装时间"
+		}
+	}
+}

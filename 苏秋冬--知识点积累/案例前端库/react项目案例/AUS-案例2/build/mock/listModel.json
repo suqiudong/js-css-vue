@@ -1,0 +1,103 @@
+{
+  "code": "0",
+  "result": {
+	"data": [
+	  {
+		"modelName": "wef",
+		"owner": "admin",
+		"description": "2323",
+		"createDate": "2017-07-27 17:00:03",
+		"pluginName": "DataModelPlugin",
+		"jarName": "aus-datain-stategridplugin-4.2.jar",
+		"collectorName": "StateGridCollector",
+		"clazzName": "com.sugon.aus.datain.plugin.stategridplugin.StateGridCollector",
+		"scheduleStrategy": "CYCLE",
+		"startTriggerTime": "2017-07-27 16:51:12",
+		"endTriggerTime": "2017-07-27 16:51:31",
+		"cronExpression": "0 0 0 * * 23 *",
+		"misfireStrategy": "DO_NOTHING",
+		"doneOffset": "23",
+		"offsetColumn": "test3.default.test.t1",
+		"lastStartTime": "2017-07-27 17:25:21",
+		"lastSpendSecond": 3,
+		"lastResult": "FAILED",
+		"logFilePath": "task/wef/20170727172521803.log",
+		"schStatus": "OFF",
+		"runStatus": "READY",
+		"visable": "PUBLIC",
+		"sources": [
+		  {
+			"sourceName": "test3",
+			"sourceType": "hive-hadoop2",
+			"sourceUrl": "thrift://10.0.37.189:9083",
+			"sourceUsername": "asdf",
+			"sourcePwd": "asdf",
+			"sourceDB": "default",
+			"sourceTable": [
+			  {
+				"TableName": "test",
+				"TableCol": [
+				  {
+					"colName": "t1",
+					"colType": "varchar"
+				  }
+				]
+			  }
+			]
+		  }
+		],
+		"dataModelSQL": "DIRECT test3 select default.test.t1  from default.test",
+		"prestoSource": "jdbc:ausmpp://10.0.31.230:18080",
+		"destServer": "localhost"
+	  },
+	  {
+		"modelName": "adas",
+		"owner": "admin",
+		"description": "2323",
+		"createDate": "2017-07-27 17:00:03",
+		"pluginName": "DataModelPlugin",
+		"jarName": "aus-datain-stategridplugin-4.2.jar",
+		"collectorName": "StateGridCollector",
+		"clazzName": "com.sugon.aus.datain.plugin.stategridplugin.StateGridCollector",
+		"scheduleStrategy": "CYCLE",
+		"startTriggerTime": "2017-07-27 16:51:12",
+		"endTriggerTime": "2017-07-27 16:51:31",
+		"cronExpression": "0 0 0 * * 23 *",
+		"misfireStrategy": "DO_NOTHING",
+		"doneOffset": "23",
+		"offsetColumn": "test3.default.test.t1",
+		"lastStartTime": "2017-07-27 17:25:21",
+		"lastSpendSecond": 3,
+		"lastResult": "FAILED",
+		"logFilePath": "task/wef/20170727172521803.log",
+		"schStatus": "ON",
+		"runStatus": "READY",
+		"visable": "PUBLIC",
+		"sources": [
+		  {
+			"sourceName": "test3",
+			"sourceType": "hive-hadoop2",
+			"sourceUrl": "thrift://10.0.37.189:9083",
+			"sourceUsername": "asdf",
+			"sourcePwd": "asdf",
+			"sourceDB": "default",
+			"sourceTable": [
+			  {
+				"TableName": "test",
+				"TableCol": [
+				  {
+					"colName": "t1",
+					"colType": "varchar"
+				  }
+				]
+			  }
+			]
+		  }
+		],
+		"dataModelSQL": "DIRECT test3 select default.test.t1  from default.test",
+		"prestoSource": "jdbc:ausmpp://10.0.31.230:18080",
+		"destServer": "localhost"
+	  }
+	]
+  }
+}

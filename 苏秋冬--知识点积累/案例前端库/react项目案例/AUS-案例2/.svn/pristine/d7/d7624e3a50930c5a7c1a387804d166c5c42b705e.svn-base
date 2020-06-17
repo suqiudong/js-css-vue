@@ -1,0 +1,86 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "dataSourceName": "hive-a",
+        "dataSourceType": "hive",
+        "description": "tion1",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+         "url": "109,65,221,164,168,82,202,55,23,154,51,5,111,92,10,145,25,176,84,194,159,247,86,44,6,116,210,114,252,182,88,163,102,219,185,219,186,159,42,57,10,145,94,63,234,197,13,204,27,224,38,78,108,148,152,183,99,61,169,57,78,36,226,34,29,155,170,160,193,13,158,83,101,145,172,231,118,76,130,47,66,158,203,30,225,61,190,95,13,238,143,217,158,143,229,166,,,,,,,,,,",
+         "user": "47,146,227,20,71,160,165,119,3,49,10,162,213,88,24,182,,,,",
+         "pwd": "47,146,227,20,71,160,165,119,3,49,10,162,213,88,24,182,,,,"
+        }
+      },
+      {
+        "dataSourceName": "oracle-a",
+        "dataSourceType": "oracle",
+        "description": "tion1",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+          "url": "192.168.0.2",
+          "user": "admin",
+          "pwd":"admin"
+        }
+      },
+      {
+        "dataSourceName": "mysql-a",
+        "dataSourceType": "mysql",
+        "description": "tion1",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+          "url": "192.168.0.1",
+          "user": "admin",
+          "pwd":"admin"
+        }
+      },
+      {
+        "dataSourceName": "postgresql-a",
+        "dataSourceType": "postgresql",
+        "description": "tion1",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+          "url": "192.168.0.1",
+          "user": "admin",
+          "pwd":"admin"
+        }
+      },
+      {
+        "dataSourceName": "mpp-a",
+        "dataSourceType": "mpp",
+        "description": "tion1",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+          "url": "192.168.0.1",
+          "user": "admin",
+          "pwd":"admin"
+        }
+      },
+      {
+        "dataSourceName": "name-a",
+        "dataSourceType": "hbase",
+        "description": "tion1",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+          "url": "192.168.0.1",
+          "user": "admin",
+          "pwd":"admin"
+        }
+      }
+    ],
+    "msg": ""
+  }
+}

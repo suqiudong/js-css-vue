@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "result": {
+    "detail": {
+      "roleName": "",
+      "desc": "",
+      "owner": "",
+      "createTime": "",
+      "member": [
+        {
+          "userName": "",
+          "phoneNo": "",
+          "email": "",
+          "name": "",
+          "department": "",
+          "position": ""
+        },
+        {
+          "userName": "",
+          "phoneNo": "",
+          "email": "",
+          "name": "",
+          "department": "",
+          "position": ""
+        }
+      ],
+      "sysPrivilege": ""
+    }
+  },
+  "msg": ""
+}

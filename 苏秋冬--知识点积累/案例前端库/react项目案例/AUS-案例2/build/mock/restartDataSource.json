@@ -1,0 +1,34 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "dataSourceName": "name1",
+        "dataSourceType": "hive",
+        "description": "tion1",
+        "visable": "¿É¼û",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+          "url": "192.168.0.1",
+          "user": "admin",
+          "pwd":"admin"
+        }
+      },
+      {
+        "dataSourceName": "name2",
+        "dataSourceType": "oracle",
+        "description": "tion1",
+        "visable": "PUBLIC",
+        "owner": "admin",
+        "syncTime": "2017-6-15 10:22:22",
+        "connectionConfig": {
+          "url": "192.168.0.2",
+          "user": "admin",
+          "pwd":"admin"
+        }
+      }
+    ],
+    "msg": ""
+  }
+}

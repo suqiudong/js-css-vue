@@ -1,0 +1,107 @@
+{
+  "code": "0",
+  "result": {
+    "data": [
+      {
+        "userName":"admin",
+        "name":"admin",
+        "createTime":"2016-12-15 10:21:29",
+        "roleName":["超级管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "删除", "授权"]
+        }
+      },
+      {
+        "userName":"zhangsan",
+        "name":"张三",
+        "createTime":"2016-12-15 10:21:30",
+        "roleName":["超级管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "删除", "管理"]
+        }
+      },
+      {
+        "name":"李四",
+        "userName":"lisi",
+        "createTime":"2016-12-15 10:21:31",
+        "roleName":["管理员","超级管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "删除", "授权"]
+        }
+      },
+      {
+        "userName":"wangwu",
+        "name":"王五",
+        "createTime":"2016-12-15 10:21:32",
+        "roleName":["超级管理员","次级管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "删除", "修改", "管理"]
+        }
+      },
+      {
+        "userName":"zhaoliu",
+        "name":"赵六",
+        "createTime":"2016-12-15 10:21:33",
+        "roleName":["次级管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "删除", "授权"]
+        }
+      },
+      {
+        "userName":"cheng1",
+        "name":"成员1",
+        "createTime":"2016-12-15 10:21:30",
+        "roleName":["管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "修改", "删除", "管理"]
+        }
+      },
+      {
+        "name":"成员2",
+        "userName":"cheng2",
+        "createTime":"2016-12-15 10:21:31",
+        "roleName":[],
+        "privilege": {
+          "USER": ["重置密码", "查看", "删除", "管理"]
+        }
+      },
+      {
+        "userName":"cheng3",
+        "name":"成员3",
+        "createTime":"2016-12-15 10:21:32",
+        "roleName":["管理员","次级管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "修改", "删除", "管理"]
+        }
+      },
+      {
+        "userName":"cheng4",
+        "name":"成员4",
+        "createTime":"2016-12-15 10:21:33",
+        "roleName":["次级管理员"],
+        "privilege": {
+          "USER": ["重置密码", "查看", "删除", "管理"]
+        }
+      },
+      {
+        "userName":"cheng5",
+        "name":"成员5",
+        "createTime":"2016-12-15 10:21:33",
+        "roleName":["管理员"],
+        "privilege": {
+          "USER": ["删除", "管理"]
+        }
+      },
+      {
+        "userName":"cheng6",
+        "name":"成员6",
+        "createTime":"2016-12-15 10:21:33",
+        "roleName":[""],
+        "privilege": {
+          "USER": ["重置密码", "管理"]
+        }
+      }
+    ]
+  },
+  "msg": ""
+}

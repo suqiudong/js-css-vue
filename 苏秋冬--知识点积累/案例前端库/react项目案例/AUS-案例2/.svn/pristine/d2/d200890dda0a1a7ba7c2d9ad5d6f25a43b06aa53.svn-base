@@ -1,0 +1,62 @@
+{
+  "code": 0,
+  "result": {
+    "detail": {
+      "datasetName": "templatetest",
+      "owner": "admin",
+      "createTime": "2017-01-18 10:54:44",
+      "shard": 2,
+      "replication": 0,
+      "isPartition": true,
+      "status": "ONLINIE",
+      "partitionField": "c1",
+      "partitionRule": "50d",
+      "schema": {
+        "properties": [
+          {
+            "fieldName": "c1",
+            "name": "å¤©æ‰",
+            "type": "date",
+            "index": "not_analyzed",
+            "store": "true",
+            "key": "false"
+          },
+          {
+            "fieldName": "c2",
+            "name": "hahahha2",
+            "type": "nested",
+            "schema": [
+              {
+                "fieldName": "aaa1",
+                "name": "hahahha",
+                "type": "string",
+                "index": "not_analyzed",
+                "key": "false",
+                "store": "false"
+              }
+            ]
+          },
+          {
+            "fieldName": "c2",
+            "name": "hahahha2",
+            "type": "nested",
+            "schema": [
+              {
+                "fieldName": "aaa2",
+                "name": "hahahha",
+                "type": "string",
+                "index": "analyzed",
+                "key": "false",
+                "store": "false",
+                "analyzer": "simple"
+              }
+            ]
+          }
+        ]
+      },
+      "visable": "PRIVATE",
+      "count": 0,
+      "size": 0
+    }
+  }
+}

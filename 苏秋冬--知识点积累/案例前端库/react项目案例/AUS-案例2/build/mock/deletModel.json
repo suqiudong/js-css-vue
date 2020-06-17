@@ -1,0 +1,32 @@
+{
+	"code": "0",
+	"result":
+	{
+	  "dataSourceNum": "10",
+	  "tableNum": "150",
+	  "data" : [
+		{
+	  		"dataSourceType": "mysql",
+	  		"dataSourceTypeNum": 1
+ 		 },
+		{
+		"dataSourceType": "Oracle",
+		"dataSourceTypeNum": 2
+		},
+		{
+		  "dataSourceType": "hive",
+		  "dataSourceTypeNum": 3
+		},
+		{
+		  "dataSourceType": "chrome",
+		  "dataSourceTypeNum": 4
+		},
+		{
+		  "dataSourceType": "HBase",
+		  "dataSourceTypeNum": 1
+		}
+
+	  ]
+  	},
+ 	 "msg" : "xxx"
+}

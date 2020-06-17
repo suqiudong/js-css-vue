@@ -1,0 +1,32 @@
+{
+  "code": "0",
+  "msg": "错了",
+  "result": {
+    "detail": {
+      "remove": [
+        {
+          "dependency": "数据集-修改",
+          "privileges": ["创建", "详情", "分析"]
+        },
+        {
+          "dependency": "数据集-删除",
+          "privileges": ["创建", "详情", "分析"]
+        }
+      ],
+      "add": [
+        {
+          "dependency": "报表-修改",
+          "privileges": ["创建", "详情", "分析"]
+        },
+        {
+          "dependency": "报表-删除",
+          "privileges": ["创建", "详情", "分析"]
+        },
+        {
+          "dependency": "报表-创建",
+          "privileges": ["创建", "详情", "分析"]
+        }
+      ]
+    }
+  }
+}

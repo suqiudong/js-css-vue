@@ -1,0 +1,443 @@
+{
+  "code": "0",
+  "result": {
+    "data": [
+      {
+        "pluginName": "INNER-PLUGIN",
+        "jarName": "aus-datain-plugin-4.1.jar",
+        "collectors": [
+          {
+            "collectorName": "SimpleFileCollector",
+            "clazzName": "com.sugon.aus.datain.plugin.file.SimpleFileCollector",
+            "props": [
+              {
+                "key": "文件路径通配符",
+                "value": "",
+                "propType": "TEXT",
+                "desc": "数据源 文件路径通配符，数据文件是CSV格式但是不需要Header",
+                "needed": true
+              },
+              {
+                "key": "CSV类型文件所有字段名",
+                "value": "",
+                "propType": "TEXT",
+                "desc": "CSV类型文件所有字段名,以','分割",
+                "needed": true
+              },
+              {
+                "key": "CSV文件字段数据间分割符",
+                "value": ",",
+                "propType": "TEXT",
+                "desc": "CSV文件字段数据间分割符",
+                "needed": true
+              },
+              {
+                "key": "组成DocID的字段名列表",
+                "propType": "TEXT",
+                "desc": "组成DocID的字段名列表,以','分割",
+                "needed": true
+              },
+              {
+                "key": "组成DocID数据分隔符",
+                "value": ">>",
+                "propType": "TEXT",
+                "desc": "组成DocID数据分隔符",
+                "needed": true
+              },
+              {
+                "key": "数据服务主机",
+                "value": "localhost",
+                "propType": "TEXT",
+                "desc": "通过数据服务写入AUS数据存储集群，数据服务的主机名或者IP",
+                "needed": true
+              },
+              {
+                "key": "数据服务端口",
+                "value": "20002",
+                "propType": "TEXT",
+                "desc": "通过数据服务写入AUS数据存储集群，数据服务的端口号",
+                "needed": true
+              },
+              {
+                "key": "dst.username",
+                "propType": "TEXT",
+                "desc": "数据存储集群授权的用户名",
+                "needed": true
+              },
+              {
+                "key": "dst.password",
+                "propType": "PASSWORD",
+                "desc": "数据存储集群授权的密码",
+                "needed": true
+              },
+              {
+                "key": "dst.dataset",
+                "propType": "SELECT_AUS_DATASETS",
+                "desc": "目的数据集名",
+                "needed": true
+              },
+              {
+                "key": "write.batchSize",
+                "value": "2000",
+                "propType": "TEXT",
+                "desc": "批量写大小",
+                "needed": true
+              }
+            ]
+          },
+          {
+            "collectorName": "BatchFTPCollector",
+            "clazzName": "com.sugon.aus.datain.plugin.ftp.BatchFTPCollector",
+            "props": [
+              {
+                "key": "ftp.server.system",
+                "value": "UNIX",
+                "propType": "TEXT",
+                "desc": "FTP 服务器系统类型UNIX/WINDOWS",
+                "needed": true
+              },
+              {
+                "key": "ftp.server.host",
+                "value": "localhost",
+                "propType": "TEXT",
+                "desc": "FTP 服务器主机名",
+                "needed": true
+              },
+              {
+                "key": "ftp.server.port",
+                "value": "21",
+                "propType": "TEXT",
+                "desc": "FTP 服务器端口号",
+                "needed": true
+              },
+              {
+                "key": "ftp.username",
+                "value": "username",
+                "propType": "TEXT",
+                "desc": "FTP 服务器 用户名",
+                "needed": true
+              },
+              {
+                "key": "ftp.password",
+                "value": "password",
+                "propType": "PASSWORD",
+                "desc": "FTP 服务器 密码",
+                "needed": true
+              },
+              {
+                "key": "src.file.path.pattern",
+                "value": "str$date_dir_pattern(yyyy/MM/dd/HH)",
+                "propType": "TEXT",
+                "desc": "FTP 文件所在路径日期路径通配符",
+                "regex": "[^$]*$date_dir_pattern((yyyy[-/]?MM[-/]?dd([-/]?HH)?)/?)/?",
+                "needed": true
+              },
+              {
+                "key": "src.file.name.pattern",
+                "value": "filename_pattern",
+                "propType": "TEXT",
+                "desc": "FTP 文件正则表达式",
+                "needed": true
+              },
+              {
+                "key": "src.file.number",
+                "value": "1",
+                "propType": "TEXT",
+                "desc": "FTP 文件最少个数",
+                "needed": true
+              },
+              {
+                "key": "collect.done.offset",
+                "value": "2017/01/01/00",
+                "propType": "TEXT",
+                "desc": "上次采集的offset，初始为要采集文件日期目录的前一天(时)目录",
+                "regex": "(d{4}[-/]?d{2}[-/]?d{2}(/d{2})?/?)/?",
+                "needed": true
+              },
+              {
+                "key": "collect.offset.increment",
+                "value": "1d",
+                "propType": "TIME_UNIT",
+                "desc": "每次采集offset增加量,和作业执行周期密切相关",
+                "regex": "d{1,4}H|d|M|y",
+                "needed": true
+              },
+              {
+                "key": "dst.file.path.pattern",
+                "value": "/mnt/data1/ftp/$date_dir_pattern(yyyyMMddHH)",
+                "propType": "TEXT",
+                "desc": "采集文件存放目录",
+                "regex": "[^$]*$date_dir_pattern((yyyy[-/]?MM[-/]?dd([-/]?HH)?)/?)/?",
+                "needed": true
+              },
+              {
+                "key": "dst.file.retention",
+                "value": "4d",
+                "propType": "TIME_UNIT",
+                "desc": "采集文件保留时间",
+                "regex": "d{1,4}(H|d|M|y)",
+                "needed": true
+              }
+            ]
+          },
+          {
+            "collectorName": "SimpleDBCollector",
+            "clazzName": "com.sugon.aus.datain.plugin.db.SimpleDBCollector",
+            "props": [
+              {
+                "key": "源数据库驱动",
+                "value": "org.postgresql.Driver",
+                "propType": "TEXT",
+                "desc": "源数据库驱动",
+                "needed": true
+              },
+              {
+                "key": "源数据库名",
+                "value": "DB",
+                "propType": "TEXT",
+                "desc": "源数据库名",
+                "needed": true
+              },
+              {
+                "key": "源数据库用户名",
+                "value": "username",
+                "propType": "TEXT",
+                "desc": "源数据库用户名",
+                "needed": true
+              },
+              {
+                "key": "源数据库密码",
+                "value": "password",
+                "propType": "PASSWORD",
+                "desc": "源数据库密码",
+                "needed": true
+              },
+              {
+                "key": "源数据库主机名",
+                "value": "10.0.0.1",
+                "propType": "TEXT",
+                "desc": "源数据库主机名",
+                "needed": true
+              },
+              {
+                "key": "源数据库端口号",
+                "value": "5432",
+                "propType": "TEXT",
+                "desc": "源数据库端口号",
+                "needed": true
+              },
+              {
+                "key": "源数据库查询语句",
+                "value": "select * from TEST",
+                "propType": "TEXT",
+                "desc": "源数据库查询语句",
+                "needed": true
+              },
+              {
+                "key": "源数据库JDBCUrl",
+                "value": "jdbc:postgresql://",
+                "propType": "TEXT",
+                "desc": "源数据库JDBCUrl",
+                "needed": true
+              },
+              {
+                "key": "OFFSET字段类型",
+                "value": "[int|long|string]",
+                "propType": "TEXT",
+                "desc": "OFFSET字段类型",
+                "needed": true
+              },
+              {
+                "key": "目的主机名",
+                "value": "localhost",
+                "propType": "TEXT",
+                "desc": "目的主机名",
+                "needed": true
+              },
+              {
+                "key": "目的端口号",
+                "value": "20001",
+                "propType": "TEXT",
+                "desc": "目的端口号",
+                "needed": true
+              },
+              {
+                "key": "目的索引",
+                "value": "index",
+                "propType": "TEXT",
+                "desc": "目的索引",
+                "needed": true
+              },
+              {
+                "key": "目的用户名",
+                "value": "type",
+                "propType": "TEXT",
+                "desc": "目的用户名",
+                "needed": true
+              },
+              {
+                "key": "目的密码",
+                "value": "password",
+                "propType": "PASSWORD",
+                "desc": "目的密码",
+                "needed": true
+              },
+              {
+                "key": "加载模式",
+                "value": "batch",
+                "propType": "TEXT",
+                "desc": "加载模式",
+                "needed": true
+              },
+              {
+                "key": "批量大小",
+                "value": "5000",
+                "propType": "TEXT",
+                "desc": "批量大小",
+                "needed": true
+              },
+              {
+                "key": "目的ID生成列",
+                "value": "col1,col2",
+                "propType": "TEXT",
+                "desc": "目的ID生成列",
+                "needed": true
+              },
+              {
+                "key": "目的ID生成分隔",
+                "value": ";",
+                "propType": "TEXT",
+                "desc": "目的ID生成分隔",
+                "needed": true
+              },
+              {
+                "key": "目的类型",
+                "value": "type",
+                "propType": "TEXT",
+                "desc": "目的类型",
+                "needed": true
+              }
+            ]
+          }
+        ],
+        "description": "内置插件",
+        "owner": "admin",
+        "developer": "AUS",
+        "time": "2017-09-04 14:28:11",
+        "version": "4.1",
+        "visable": "PUBLIC",
+        "status": "INSTALLED",
+        "privilege": {
+          "PLUGIN": ["卸载", "修改", "授权", "查看"]
+        }
+      },
+      {
+        "pluginName": "plugin-test-01",
+        "jarName": "aus-plugin-test-4.1.jar",
+        "collectors": [
+          {
+            "collectorName": "Collector1",
+            "clazzName": "com.sugon.aus.test.Collector1",
+            "props": [
+              {
+                "key": "user",
+                "value": "123",
+                "propType": "TEXT",
+                "desc": "desc_username"
+              },
+              {
+                "key": "password1",
+                "value": "123",
+                "propType": "PASSWORD",
+                "desc": "desc_password"
+              },
+              {
+                "key": "password2",
+                "value": "123",
+                "propType": "PASSWORD",
+                "desc": "desc_password"
+              },
+              {
+                "key": "目的数据集1",
+                "value": "index121",
+                "propType": "SELECT_AUS_DATASETS",
+                "desc": "description "
+              },
+              {
+                "key": "目的数据集2",
+                "value": "index121",
+                "propType": "SELECT_AUS_DATASETS",
+                "desc": "description "
+              },
+              {
+                "key": "时间1",
+                "value": "index121",
+                "propType": "DATETIME",
+                "desc": "descriptiondddddddddd"
+              },
+              {
+                "key": "时间2",
+                "value": "index121",
+                "propType": "DATETIME",
+                "desc": "descriptiondddddddddd"
+              },
+              {
+                "key": "cnt",
+                "value": "123",
+                "propType": "TEXT",
+                "desc": "descriptiondddddddddd"
+              }
+            ]
+          },
+          {
+            "collectorName": "Collector2",
+            "clazzName": "com.sugon.aus.test.Collector2",
+            "props": [
+              {
+                "key": "username",
+                "value": "123",
+                "propType": "TEXT",
+                "desc": "desc_username"
+              },
+              {
+                "key": "password",
+                "value": "123",
+                "propType": "PASSWORD",
+                "desc": "desc_password"
+              },
+              {
+                "key": "dst",
+                "value": "index121",
+                "propType": "SELECT_AUS_DATASETS",
+                "desc": "description "
+              },
+              {
+                "key": "time",
+                "value": "index121",
+                "propType": "DATETIME",
+                "desc": "descriptiondddddddddd"
+              },
+              {
+                "key": "cnt",
+                "value": "123",
+                "propType": "TEXT",
+                "desc": "descriptiondddddddddd"
+              }
+            ]
+          }
+        ],
+        "description": "功能描述~~~",
+        "owner": "admin",
+        "developer": "AUS",
+        "time": "2017-09-06 20:06:46",
+        "version": "1.0",
+        "visable": "PUBLIC",
+        "status": "INSTALLED",
+        "privilege": {
+          "PLUGIN": ["卸载", "修改", "授权", "查看"]
+        }
+      }
+    ]
+  },
+  "msg": "错了"
+}

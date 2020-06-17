@@ -1,0 +1,77 @@
+/**
+ * Created by sugon007 on 2017/5/24.
+ */
+import dataViewService from 'SERVICE/dataView';
+import fetch from 'isomorphic-fetch';
+// ================================
+// Action Type
+// ================================
+const GET_SQLDATAVIEW = 'GET_SQLDATAVIEW';
+const GET_PLANDATAVIEW = 'GET_PLANDATAVIEW';
+// ================================
+// Action Creator
+// ================================
+
+// const getSqlResult = (mqlOptions) => {
+//     let mqlResult = dataViewService.getSqlResult(mqlOptions);
+//     return {
+//         type: GET_SQLDATAVIEW,
+//         payload: {
+//             mqlResult: mqlResult
+//         }
+//     }
+// };
+
+const getResult = (mqlResult) => {
+    return {
+        type: GET_SQLDATAVIEW,
+        payload: {
+            mqlResult: mqlResult
+        }
+    }
+};
+
+// 获取数据
+const getSqlResult = (mqlOptions) => {
+    return dispatch => {
+        // dispatch(getResult());
+        return fetch('/DataSource/explain', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(mqlOptions)
+        })
+        .then(response =>
+            response.json()
+        ).then((data)=>{
+            dispatch(getResult(data.result));
+        }).catch(error => console.log(error))
+    }
+}
+
+const getPlanResult = (mqlOptions) => {
+    let planResult = dataViewService.getPlanResult(mqlOptions);
+    return {
+        type: GET_PLANDATAVIEW,
+        payload: {
+            planResult: planResult
+        }
+    }
+};
+
+/* default 导出所有 Actions Creator */
+export default {
+    getSqlResult, getPlanResult
+}
+
+// ================================
+// Action handlers for Reducer
+// ================================
+export const ACTION_HANDLERS = {
+    [GET_SQLDATAVIEW]: (dataView, { payload }) => Object.assign({}, dataView, {mqlResult: payload.mqlResult}),
+    [GET_PLANDATAVIEW]: (dataView, { payload }) => {dataView.planResult = payload.planResult; return dataView }
+    // [GET_PLANDATAVIEW]: (dataView, { payload }) => {dataView.mqlResult = payload.mqlResult; return dataView },
+    // [GET_PLANDATAVIEW]: (dataView, {payload}) => Object.assign({}, dataView, {planResult: payload.planResult})
+}

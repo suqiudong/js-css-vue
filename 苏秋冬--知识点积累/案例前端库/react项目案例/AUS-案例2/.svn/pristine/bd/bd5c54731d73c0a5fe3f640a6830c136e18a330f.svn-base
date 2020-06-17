@@ -1,0 +1,21 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "id": "75012",
+        "name": "Dorothy Wilk",
+        "email_preferences": "11222",
+        "addresses": "x1111",
+        "orders": "com.sug"
+      },
+      {
+        "id": "17254",
+        "name": "Martin Johnson",
+        "email_preferences": "1444444444444444",
+        "addresses": "255t_1=5",
+        "orders": "com.sugon.ausmpp.j4ba74434"
+      }
+    ]
+  }
+}

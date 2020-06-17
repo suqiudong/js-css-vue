@@ -1,0 +1,458 @@
+/**
+ * 开发环境配置
+ * User: gaogy
+ * Date: 2016/11/25
+ * Time: 15:09
+ */
+var express = require('express'),
+    webpack = require('webpack'),
+// favicon = require('express-favicon'),
+    config = require('./webpack.dev.conf'),
+    app = express();
+
+var compiler = webpack(config);
+
+// 静态资源获取
+app.use('/static', express.static(config.commonPath.staticDir));
+
+// app.use(favicon(path.join(__dirname, '../favicon.ico')));
+
+// HTML5 history API插件
+app.use(require('connect-history-api-fallback')());
+
+// 组织包装bundle文件使其变为中间件
+app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+}));
+
+// 启用 hot-reload 和 state-preserving
+// 展示编译错误
+app.use(require('webpack-hot-middleware')(compiler));
+
+app.listen(9000, '127.0.0.1', function(err) {
+    err && console.log(err);
+});
+var proxy = require('express-http-proxy');
+const apiProxy = proxy('http://10.0.31.230:8080'); // 将服务器代理到localhost:8080端口上[本地服务器为localhost:3000]
+app.all('/*', apiProxy); // api子目录下的都是用代理
+/*******************快速导航请求**********************/
+app.post('/DataSource/homepage', function(req, res){
+    res.send(require("./mock/homepage.json"));
+});
+/*******************快速导航完成**********************/
+
+/*******************主题管理请求**********************/
+app.post('/Dashboar/TopicList', function(req, res){
+    res.send(require("./mock/TopicList.json"));
+});
+app.post('/Dashboar/createTopic', function(req, res){
+    res.send(require("./mock/createTopic.json"));
+});
+app.post('/Dashboar/deleteTopic', function(req, res){
+    res.send(require("./mock/deleteTopic.json"));
+});
+app.post('/Dashboar/updateTopic', function(req, res){
+    res.send(require("./mock/updateTopic.json"));
+});
+/*******************主题管理完成**********************/
+
+/*******************报表管理请求**********************/
+app.post('/ReportManager/list', function(req, res){
+    res.send(require("./mock/reportList.json"));
+});
+
+app.post('/ReportManager/delete', function(req, res){
+    res.send(require("./mock/deleteReport.json"));
+});
+
+app.post('/ReportManager/search', function(req, res){
+    res.send(require("./mock/searchReport.json"));
+});
+
+app.post('/ReportManager/create', function(req, res){
+    res.send(require("./mock/addReport.json"));
+});
+
+app.post('/ReportManager/get', function(req, res){
+    res.send(require("./mock/reportDetail.json"));
+});
+
+app.post('/ReportManager/modify', function(req, res){
+    res.send(require("./mock/updateReport.json"));
+});
+
+/*******************仪表板管理请求**********************/
+app.post('/DashboardManager/list', function(req, res){
+    res.send(require("./mock/dashboardList.json"));
+});
+
+app.post('/DashboardManager/create', function(req, res){
+    res.send(require("./mock/createDashboard.json"));
+});
+
+app.post('/DashboardManager/delete', function(req, res){
+    res.send(require("./mock/deleteDashboard.json"));
+});
+
+app.post('/DashboardManager/get', function(req, res){
+    res.send(require("./mock/getDashboard.json"));
+});
+app.post('/DashboardManager/dashBoardTransform', function(req, res){
+    res.send(require("./mock/getDashboard.json"));
+});
+app.get('/DashboardManager/dashBoardTransform', function(req, res){
+    console.log(1)
+    res.send(require("./mock/getDashboard.json"));
+});
+
+app.post('/DashboardManager/modify', function(req, res){
+    res.send(require("./mock/deleteDashboard.json"));
+});
+
+app.post('/DashboardManager/search', function(req, res){
+    res.send(require("./mock/searchDashboard.json"));
+});
+
+// 用户列表请求
+app.post('/UserManager/listUser', function(req, res){
+    res.send(require("./mock/usermanages.json"));
+});
+
+app.post('/UserManager/delete', function(req, res){
+    res.send(require("./mock/usermanage2.json"));
+});
+
+app.post('/UserManager/getUserInfo', function(req, res){
+    res.send(require("./mock/userDetail.json"));
+});
+
+app.post('/UserManager/modifyUserInfo', function(req, res){
+    res.send(require("./mock/isSaveSuccess.json"));
+});
+
+app.post('/UserManager/create', function(req, res){
+    res.send(require("./mock/isAddSuccess.json"));
+});
+
+// 用户权限请求
+app.post('/PrivilegeManager/listAllSysPrivilege', function(req, res){
+    res.send(require("./mock/listAllSysPrivilege.json"));
+});
+app.post('/UserPrivilegeManager/sysPrivilege', function(req, res){
+    res.send(require("./mock/userSysPrivilege.json"));
+});
+app.post('/UserManager/chownUser', function(req, res){
+    res.send(require("./mock/userSysPrivilegeModify.json"));
+});
+
+/************************数据集请求****************************/
+app.post('/DatasetManager/listDataset', function (req, res) {
+    res.send(require("./mock/datasetsList.json"));
+});
+app.post('/DatasetManager/createDataset', function (req, res) {
+    res.send(require("./mock/createDataset.json"));
+});
+app.post('/DatasetManager/isExists', function (req, res) {
+    res.send(require("./mock/datasetIsExist.json"));
+});
+app.post('/DatasetManager/get', function (req, res) {
+    res.send(require("./mock/getDataset.json"));
+});
+app.post('/DatasetManager/deleteDataset', function (req, res) {
+    res.send(require("./mock/deleteDataset.json"));
+});
+app.post('/DatasetManager/modifyDataset', function (req, res) {
+    res.send(require("./mock/modifyDataset.json"));
+});
+app.post('/DatasetManager/listAnalyzers', function (req, res) {
+    res.send(require("./mock/listAnalyzers.json"));
+});
+app.post('/DatasetManager/getMaxSettingNums', function (req, res) {
+    res.send(require("./mock/getMaxSettingNums.json"));
+});
+/************************数据集请求完毕****************************/
+
+/************************数据源请求****************************/
+app.post('/DataSource/list', function (req, res) {
+    res.send(require("./mock/dataSourceList.json"));
+});
+app.post('/DataSource/add', function (req, res) {
+    res.send(require("./mock/addDataSource.json"));
+});
+app.post('/DataSource/detail', function (req, res) {
+    res.send(require("./mock/detailDataSource.json"));
+});
+app.post('/DataSource/delete', function (req, res) {
+    res.send(require("./mock/delDataSource.json"));
+});
+// 文件上传接口
+app.post('/DataSource/uploadKrb5', function (req, res) {
+    res.send(require("./mock/uploadKrb5.json"));
+});
+// 测试链接
+app.post('/DataSource/testConnect', function (req, res) {
+    res.send(require("./mock/testConnectDataSource.json"));
+});
+// 同步接口
+app.post('/DataSource/syncSchemaInfo', function (req, res) {
+    res.send(require("./mock/syncSchemaInfo.json"));
+});
+app.post('/DataSource/modify', function (req, res) {
+    res.send(require("./mock/modifyDataSource.json"));
+});
+// 服务重启
+app.post('/DataSource/restart', function (req, res) {
+    res.send(require("./mock/restartDataSource.json"));
+});
+/************************数据源请求完毕****************************/
+
+/************************数据建模请求****************************/
+app.post('/DataModelManager/create', function (req, res) {
+    res.send(require("./mock/createDataModel.json"));
+});
+app.post('/DataModelManager/list', function (req, res) {
+    res.send(require("./mock/listModel.json"));
+});
+app.post('/DataModelManager/delete', function (req, res) {
+    res.send(require("./mock/deletModel.json"));
+});
+app.post('/DataModelManager/onSch', function (req, res) {
+    res.send(require("./mock/onSch.json"));
+});
+app.post('/DataModelManager/offSch', function (req, res) {
+    res.send(require("./mock/offSch.json"));
+});
+app.post('/DataModelManager/killCurrent', function (req, res) {
+    res.send(require("./mock/killCurrent.json"));
+});
+app.post('/DataModelManager/runOnce', function (req, res) {
+    res.send(require("./mock/runOnce.json"));
+});
+app.post('/DataModelManager/get', function (req, res) {
+    res.send(require("./mock/getModel.json"));
+});
+app.post('/DataModelManager/modifybasic', function (req, res) {
+    res.send(require("./mock/modifybasic.json"));
+});
+app.post('/DataModelManager/isRunning', function (req, res) {
+    res.send(require("./mock/isRunningBatch.json"));
+});
+app.post('/DataModelManager/isOnSch', function (req, res) {
+    res.send(require("./mock/isOnSchBatch.json"));
+});
+/************************数据建模请求完毕****************************/
+
+/************************系统权限请求****************************/
+ // 保存前的 check;
+app.post('/PrivilegeManager/checkSysPrivilege', function (req, res) {
+    res.send(require("./mock/checkSysPrivilege.json"));
+});
+
+app.post('/RoleManager/list', function (req, res) {
+    res.send(require("./mock/listRoleSystemPrivilege.json"));
+});
+app.post('/RoleManager/chownRole', function (req, res) {
+    res.send(require("./mock/RoleManagerModify.json"));
+});
+/************************系统权限请求完毕****************************/
+// 角色列表请求
+app.post('/RoleManager/delete', function(req, res){
+    res.send(require("./mock/roleListSave.json"));
+});
+app.post('/RoleManager/create', function(req, res){
+    res.send(require("./mock/roleListSave.json"));
+});
+app.post('/RoleManager/getRoleInfo', function(req, res){
+    res.send(require("./mock/getRole.json"));
+});
+
+app.post('/RoleManager/listRole', function(req, res){
+    res.send(require("./mock/roleManages.json"));
+});
+
+app.post('/RoleManager/modify', function(req, res){
+    res.send(require("./mock/roleListSave.json"));
+});
+
+app.post('/UserManager/validUser', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/UserManager/logout', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+app.post('/PrivilegeManager/listSystemPrivilege', function(req, res){
+    res.send(require("./mock/listSystemPrivilege.json"));
+});
+
+app.post('/LicenseManager/validLicenseStatus', function(req, res){
+    res.send(require("./mock/isActive.json"));
+});
+
+app.post('/LicenseManager/uploadLicenseFile', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+
+/*********       AUS4.2 驱动管理           ***********/
+app.post('/DriverManager/list', function(req, res){
+    res.send(require("./mock/driverList.json"));
+});
+app.post('/DriverManager/upload', function(req, res){
+    res.send(require("./mock/pluginupload.json"));
+});
+app.post('/DriverManager/detail', function(req, res){
+    res.send(require("./mock/driverGet.json"));
+});
+app.post('/DriverManager/uninstall', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+app.post('/DriverManager/install', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+// app.post('/DriverManager/isBeingUsed', function(req, res){
+//     res.send(require("./mock/isBeingUsed.json"));
+// });
+//
+// app.post('/DriverManager/modify', function(req, res){
+//     res.send(require("./mock/isLoginSuccess.json"));
+// });
+// app.post('/DriverManager/getRelatedJobsByDriverName', function(req, res){
+//     res.send(require("./mock/jobListByDriverName.json"));
+// });
+/*********       AUS4.2 驱动管理结束           ***********/
+
+
+/*********       AUS4.2 插件管理           ***********/
+
+app.post('/PluginManager/list', function(req, res){
+    res.send(require("./mock/pluginList.json"));
+});
+app.post('/PluginManager/upload', function(req, res){
+    res.send(require("./mock/pluginupload.json"));
+});
+
+app.post('/PluginManager/isBeingUsed', function(req, res){
+    res.send(require("./mock/isBeingUsed.json"));
+});
+
+app.post('/PluginManager/get', function(req, res){
+    res.send(require("./mock/plugGet.json"));
+});
+
+app.post('/PluginManager/install', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/PluginManager/modify', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/PluginManager/uninstall', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/PluginManager/getRelatedJobsByPluginName', function(req, res){
+    res.send(require("./mock/jobListByPluginName.json"));
+});
+
+
+
+/*********       AUS4.2 插件管理结束         ***********/
+
+
+/*********       AUS4.2 作业管理           ***********/
+app.post('/JobManager/list', function(req, res){
+    res.send(require("./mock/jobList.json"));
+});
+
+app.post('/JobManager/onsch', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/JobManager/offsch', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/JobManager/delete', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/JobManager/killCurrent', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/JobManager/runOnce', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/DatasetManager/list', function(req, res){
+    res.send(require("./mock/datasetsList.json"));
+});
+
+app.post('/JobManager/create', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+
+app.post('/JobManager/get', function(req, res){
+    res.send(require("./mock/jobInfor.json"));
+});
+
+app.post('/JobManager/modify', function(req, res){
+    res.send(require("./mock/isLoginSuccess.json"));
+});
+app.post('/JobManager/cronValidate', function(req, res){
+    res.send(require("./mock/cronValidate.json"));
+});
+app.post('/JobManager/prepareModify', function(req, res){
+    res.send(require("./mock/cronValidate.json"));
+});
+app.post('/JobManager/getLog', function(req, res){
+    res.send(require("./mock/log.json"));
+});
+/*********       AUS4.2 作业管理结束         ***********/
+
+
+/************************资源权限请求****************************/
+app.post('/PrivilegeManager/listResourcePrivilege', function(req, res){
+    res.send(require("./mock/readResPrivige.json"));
+});
+app.post('/PrivilegeManager/createResourcePrivilege', function(req, res){
+    res.send(require("./mock/modifyDataset.json"));
+});
+app.post('/PrivilegeManager/checkResPrivilege', function (req, res) {
+    res.send(require("./mock/checkSysPrivilege.json"));
+});
+/************************数据查看请求****************************/
+app.post('/DataSource/explain', function(req, res){
+    res.send(require("./mock/sqlDataView.json"));
+});
+app.post('/DataSource/sql', function(req, res){
+    res.send(require("./mock/dataViewList.json"));
+});
+/************************服务监控管理请求****************************/
+app.post('/ServiceMointor/listName', function(req, res){
+    res.send(require("./mock/serviceName.json"));
+});
+app.post('/LogManager/queryService', function(req, res){
+    res.send(require("./mock/serviceMonitorList.json"));
+});
+/***********************日志查询*********************************/
+app.post('/LogManager/queryLog', function (req, res) {
+    res.send(require("./mock/logQuery.json"));
+});
+/***********************节点服务管理查询*********************************/
+app.post('/NodeServerManage/nodeList', function (req, res) {
+    res.send(require("./mock/nodeServerManageList.json"));
+});
+app.post('/NodeServerManage/serverList', function (req, res) {
+    res.send(require("./mock/nodeServerManageList.json"));
+});
+app.post('/NodeServerManage/add', function (req, res) {
+    res.send(require("./mock/nodeServerManageAdd.json"));
+});
+/***********************节点监控列表查询*********************************/
+app.post('/NodeMonitor/list', function (req, res) {
+    res.send(require("./mock/nodeMonitorList.json"));
+});

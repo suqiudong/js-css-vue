@@ -1,0 +1,166 @@
+import xhr from './xhr/';
+import { error, success } from 'UTIL/notification';
+
+class DataSourceConfService {
+    // 读取数据源列表
+    readDataset() {
+        let dataSourceList = {};
+        xhr({
+            url: '/DataSource/list',
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    dataSourceList = data;
+
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        return dataSourceList;
+    }
+    // 删除数据源
+    deleteDataSource(DataSourceName) {
+        xhr({
+            url: '/DataSource/delete',
+            async: false,
+            data: DataSourceName,
+            success: function (data) {
+                if (data.code == '0') {
+                    success('删除成功！');
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+    }
+    // 创建数据源
+    createDataScource(dataSourceOptions) {
+        let code = {};
+        xhr({
+            url: '/DataSource/add',
+            data: dataSourceOptions,
+            success: function (data) {
+                code = data;
+                if (data.code == '0') {
+                    success('创建成功！');
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        return code;
+    }
+
+    // 更新及查看详情时，查询数据源详细信息
+    getDataSource(DataSource) {
+        let dataSourceDetail = {};
+        xhr({
+            url: '/DataSource/detail',
+            data: DataSource,
+            success: function (data) {
+                if (data.code == '0') {
+                    dataSourceDetail = data.result.detail;
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        // 此时拿到数据源对象
+        return dataSourceDetail;
+    }
+    // 判断数据源名称是否存在
+    isExists(dataSourceName) {
+        var isExists = false;
+        xhr({
+            url: '/DataSource/list',
+            async: false,
+            data: dataSourceName,
+            success: function (data) {
+                var date = data.result.data;
+                for (let i = 0; i < date.length; i++) {
+                   if (date[i].dataSourceName == dataSourceName) {
+                      isExists = true;
+                   }
+                }
+            }
+        });
+        return isExists;
+    }
+
+    // 修改数据集
+    modifyDataSource(dataSourceOptions) {
+        var hasModified = false;
+        xhr({
+            url: '/DataSource/modify',
+            data: dataSourceOptions,
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    success('保存成功！');
+                    hasModified = true;
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        if (hasModified) {
+            return dataSourceOptions.dataSourceName;
+        }
+    }
+    // 服务重启
+    restart() {
+        let dataRestart = {};
+        xhr({
+            url: '/DataSource/restart',
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    dataRestart = data.result.data;
+                    success('重启成功！');
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        return dataRestart;
+    }
+    // 测试数据源链接
+    testConnect(dataSource) {
+        let testIsEixt = false;
+        xhr({
+            url: '/DataSource/testConnect',
+            async: false,
+            data: dataSource,
+            success: function (data) {
+                if (data.code == '0') {
+                    testIsEixt = true;
+                    success('链接成功');
+                } else {
+                    error(data.msg);
+                }
+            }
+        })
+        return testIsEixt;
+    }
+    // 同步表信息
+    syncSchemaInfo(dataSourceName) {
+        let datalist = {};
+        xhr({
+            url: '/DataSource/syncSchemaInfo',
+            async: false,
+            data: dataSourceName,
+            success: function (data) {
+                if (data.code == '0') {
+                    datalist = data.result.data;
+                    success('同步表信息成功');
+                } else {
+                    error(data.msg);
+                }
+            }
+        })
+        return datalist;
+    }
+}
+
+export default new DataSourceConfService();

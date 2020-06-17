@@ -1,0 +1,112 @@
+/**
+ * Created by xdata on 7/12.
+ */
+import fetch from './fetch';
+import {error, success} from 'UTIL/notification';
+
+class DataSourceModelService {
+    // 读取数据源列表
+    /*
+     同步请求
+     readDataSource() {
+     let dataSourceList = {};
+     xhr({
+     url: '/DataSource/list',
+     async: false,
+     success: function (data) {
+     if (data.code == '0') {
+     dataSourceList = data.result.data;
+     } else {
+     // error(data.msg);
+     }
+     }
+     });
+     return dataSourceList;
+
+     }
+    async readDashboards() {
+        return fetch({
+            url: '/DashboardManager/list',
+            success: function (data) {
+                if (data.code == '0') {
+                    return data;
+                }
+                error(data.msg);
+                return {};
+            }
+        });
+    }
+     */
+    async readDataSource() {
+        return fetch({
+            url: '/DataSource/list',
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    return data.result.data;
+                } else {
+                    // error(data.msg);
+                }
+            }
+        });
+    }
+    // 查询建模
+    async dataModelManagerList() {
+        return fetch({
+            url: '/datamodelmanager/list',
+            async: false,
+            success: function (data) {
+                return data;
+            }
+        });
+    }
+
+    // 获取数据源表信息
+    async getDataSource(DataSourceName) {
+        return fetch({
+            url: '/DataSource/detail',
+            data: DataSourceName,
+            success: function (data) {
+                if (data.code == '0') {
+                   return data.result.detail;
+                } else {
+                    // error(data.msg);
+                }
+            }
+        });
+    }
+
+   async getPlanResult(mqlOptions) {
+       return fetch({
+            url: '/DataSource/sql',
+            data: mqlOptions,
+            success: function (data) {
+                if (data.code == '0') {
+                    // success('数据查询成功');
+                    return data.result.data;
+                } else {
+                    error(data.msg);
+
+                }
+            }
+        });
+    }
+
+    // 保存
+    async datamodelSave(mqlOptions) {
+        return fetch({
+            url: '/datamodelmanager/create',
+            data: mqlOptions,
+            success: function (data) {
+                if (data.code == '0') {
+                     success('保存成功');
+                } else {
+                    error(data.msg);
+
+                }
+            }
+        });
+    }
+}
+
+export default new DataSourceModelService();

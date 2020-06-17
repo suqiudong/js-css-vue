@@ -1,0 +1,14 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "list":"name1"
+      },
+      {
+        "list":"name2"
+      }
+    ],
+    "msg": ""
+  }
+}

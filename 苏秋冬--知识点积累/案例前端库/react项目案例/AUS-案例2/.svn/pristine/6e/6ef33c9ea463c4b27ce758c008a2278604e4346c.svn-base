@@ -1,0 +1,85 @@
+/**
+ * Created by xdata on 7/12.
+ */
+// ================================
+// Action Type
+// ================================
+import dataSourceModelService from 'SERVICE/dataSourceModelService'
+const READ_DATASOURCEMODEL = 'READ_DATASOURCEMODEL';
+const GET_MODELLIST = 'GET_MODELLIST';
+// const GET_DATASOURCETABEL = 'GET_DATASOURCETABEL';
+// const GET_PLANRESULT = 'GET_PLANRESULT';
+// ================================
+// Action Creator
+// ================================
+/*
+const getSqlResult = (mqlOptions) => {
+    return async function(dispatch) {
+        let mqlResult = await dataViewService.getSqlResult(mqlOptions);
+        dispatch({
+            type: GET_SQLDATAVIEW,
+            payload: {
+                mqlResult: mqlResult
+            }
+        })
+    }
+};*/
+// 查询数据源
+const readDataSource = () => {
+    return async function(dispatch) {
+        let readDataSource = await dataSourceModelService.readDataSource();
+        dispatch({
+            type: 'READ_DATASOURCEMODEL',
+            payload: {
+                dataSourceModelList: readDataSource
+            }
+        })
+    }
+};
+/*
+// 获取数据源表信息
+const getDataSourceTabel = (DataSourceName) => {
+    return async function(dispatch) {
+        // let getDataSource = await dataSourceModelService.getDataSource(DataSourceName);
+        dispatch({
+            type: 'GET_DATASOURCETABEL',
+            payload: {
+                DataSourceTabel: await dataSourceModelService.getDataSource(DataSourceName)
+            }
+        })
+    };
+};
+// 查询数据集
+const getPlanResult = (Data) => {
+        return async function(dispatch) {
+            dispatch({
+                type: 'GET_PLANRESULT',
+                payload: {
+                    getPlanResults: await dataSourceModelService.getPlanResult(Data)
+                }
+            })
+        }
+};*/
+const ModelManagerList = () => {
+    return async function(dispatch) {
+        let modelist = await dataSourceModelService.dataModelManagerList();
+        dispatch({
+            type: 'GET_MODELLIST',
+            payload: {
+                modelList: modelist
+            }
+        })
+    }
+};
+export default {readDataSource, ModelManagerList}
+
+// ================================
+// Action handlers for Reducer
+// ================================
+export const ACTION_HANDLERS = {
+    [READ_DATASOURCEMODEL]: (dataSourceModel, { payload }) => Object.assign({}, dataSourceModel, {dataSourceModelList: payload.dataSourceModelList}),
+    // [GET_DATASOURCETABEL]: (dataSourceModel, { payload }) => Object.assign({}, dataSourceModel, {DataSourceTabel: payload.DataSourceTabel}),
+    // [GET_PLANRESULT]: (dataSourceModel, { payload }) => Object.assign({}, dataSourceModel, {getPlanResults: payload.getPlanResults})
+    [GET_MODELLIST]: (dataSourceModel, { payload }) => Object.assign({}, dataSourceModel, {modelList: payload.modelList})
+};
+

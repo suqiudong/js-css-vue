@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "time": "xx年xx月xx日",
+        "logLevel": "1级",
+        "operator": "薛贺",
+        "appName": "业务模块",
+        "operateName": "操作名称",
+        "parameter": "xxxx",
+        "resName": "资源名",
+        "resType": "资源类型",
+        "status": "状态",
+        "duration": "耗时"
+      },
+      {
+        "time": "xx年xx月xx日",
+        "logLevel": "2级",
+        "operator": "xxx",
+        "appName": "业务模块",
+        "operateName": "操作者姓名",
+        "parameter": "xxxx",
+        "resName": "资源名",
+        "resType": "资源类型",
+        "status": "状态",
+        "duration": "耗时"
+      }
+    ]
+  }
+}

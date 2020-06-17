@@ -1,0 +1,302 @@
+{
+	"code": "0",
+	"result": {
+		"data" : [
+			{
+				"jobName": "ts2",
+				"owner": "admin",
+				"description": "test",
+				"createDate": "2017-09-04 14:43:39",
+				"pluginName": "INNER-PLUGIN",
+				"jarName": "aus-datain-plugin-4.1.jar",
+				"collectorName": "SimpleDBCollector",
+				"clazzName": "com.sugon.aus.datain.plugin.db.SimpleDBCollector",
+				"scheduleStrategy": "CYCLE",
+				"startTriggerTime": "2017-09-04 14:38:51",
+				"endTriggerTime": "2018-09-04 14:38:51",
+				"cronExpression": "*/5 * * * * ?",
+				"misfireStrategy": "DO_NOTHING",
+				"doneOffset": "1",
+				"schStatus": "OFF",
+				"runStatus": "END",
+				"visable": "PUBLIC",
+				"specialProps": [
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "oracle.jdbc.driver.OracleDriver",
+						"key": "源数据库驱动",
+						"desc": "源数据库驱动"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "xdbdb",
+						"key": "源数据库名",
+						"desc": "源数据库名"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "xdata",
+						"key": "源数据库用户名",
+						"desc": "源数据库用户名"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "PASSWORD",
+						"value": "manager",
+						"key": "源数据库密码",
+						"desc": "源数据库密码"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "10.0.37.32",
+						"key": "源数据库主机名",
+						"desc": "源数据库主机名"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "1521",
+						"key": "源数据库端口号",
+						"desc": "源数据库端口号"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "select ACCT_NAME from A_PAY_FLOW where rownum<100",
+						"key": "源数据库查询语句",
+						"desc": "源数据库查询语句"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "jdbc:oracle:thin:@",
+						"key": "源数据库JDBCUrl",
+						"desc": "源数据库JDBCUrl"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "int",
+						"key": "OFFSET字段类型",
+						"desc": "OFFSET字段类型"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "localhost",
+						"key": "目的主机名",
+						"desc": "目的主机名"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "20001",
+						"key": "目的端口号",
+						"desc": "目的端口号"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "ts2",
+						"key": "目的索引",
+						"desc": "目的索引"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "admin",
+						"key": "目的用户名",
+						"desc": "目的用户名"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "PASSWORD",
+						"value": "ausadmin123",
+						"key": "目的密码",
+						"desc": "目的密码"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "batch",
+						"key": "加载模式",
+						"desc": "加载模式"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "50",
+						"key": "批量大小",
+						"desc": "批量大小"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "ACCT_NAME",
+						"key": "目的ID生成列",
+						"desc": "目的ID生成列"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": ",",
+						"key": "目的ID生成分隔",
+						"desc": "目的ID生成分隔"
+					}
+				,
+					{
+						"needed": true,
+						"propType": "TEXT",
+						"value": "TYPE",
+						"key": "目的类型",
+						"desc": "目的类型"
+					}
+				],
+				"lastStartTime": "2017-09-04 14:45:40",
+				"logFilePath": "task/ts2/20170904144540331.log",
+				"lastSpendSecond": 3,
+				"lastResult": "SUCCEED",
+				"privilege": {
+					"JOB": ["查看", "删除", "修改", "授权", "操作"]
+				}
+			},
+			{
+				"jobName": "ts3",
+				"owner": "admin",
+				"description": "test",
+				"createDate": "2017-09-04 14:47:41",
+				"pluginName": "INNER-PLUGIN",
+				"jarName": "aus-datain-plugin-4.1.jar",
+				"collectorName": "SimpleFileCollector",
+				"clazzName": "com.sugon.aus.datain.plugin.file.SimpleFileCollector",
+				"scheduleStrategy": "CYCLE",
+				"startTriggerTime": "2017-09-04 14:47:38",
+				"endTriggerTime": "2018-09-04 14:47:38",
+				"cronExpression": "*/5 * * * * ?",
+				"misfireStrategy": "DO_NOTHING",
+				"doneOffset": "1",
+				"schStatus": "OFF",
+				"runStatus": "END",
+				"visable": "PUBLIC",
+				"specialProps": [
+					{
+						"key": "文件路径通配符",
+						"value": "/opt/XDataAus/person_10000.txt",
+						"propType": "TEXT",
+						"desc": "数据源 文件路径通配符，数据文件是CSV格式但是不需要Header",
+						"needed": true
+					}
+				,
+					{
+						"key": "CSV类型文件所有字段名",
+						"value": "id,name,sex,mail,tel,addr",
+						"propType": "TEXT",
+						"desc": "CSV类型文件所有字段名,以','分割",
+						"needed": true
+					}
+				,
+					{
+						"key": "CSV文件字段数据间分割符",
+						"value": ",",
+						"propType": "TEXT",
+						"desc": "CSV文件字段数据间分割符",
+						"needed": true
+					}
+				,
+					{
+						"key": "组成DocID的字段名列表",
+						"value": "id,name",
+						"propType": "TEXT",
+						"desc": "组成DocID的字段名列表,以','分割",
+						"needed": true
+					}
+				,
+					{
+						"key": "组成DocID数据分隔符",
+						"value": ">>",
+						"propType": "TEXT",
+						"desc": "组成DocID数据分隔符",
+						"needed": true
+					}
+				,
+					{
+						"key": "数据服务主机",
+						"value": "localhost",
+						"propType": "TEXT",
+						"desc": "通过数据服务写入AUS数据存储集群，数据服务的主机名或者IP",
+						"needed": true
+					}
+				,
+					{
+						"key": "数据服务端口",
+						"value": "20001",
+						"propType": "TEXT",
+						"desc": "通过数据服务写入AUS数据存储集群，数据服务的端口号",
+						"needed": true
+					}
+				,
+					{
+						"key": "dst.username",
+						"value": "xdata",
+						"propType": "TEXT",
+						"desc": "数据存储集群授权的用户名",
+						"needed": true
+					}
+				,
+					{
+						"key": "dst.password",
+						"value": "ausadmin123",
+						"propType": "PASSWORD",
+						"desc": "数据存储集群授权的密码",
+						"needed": true
+					}
+				,
+					{
+						"key": "dst.dataset",
+						"value": "ts3",
+						"propType": "SELECT_AUS_DATASETS",
+						"desc": "目的数据集名",
+						"needed": true
+					}
+				,
+					{
+						"key": "write.batchSize",
+						"value": "200",
+						"propType": "TEXT",
+						"desc": "批量写大小",
+						"needed": true
+					}
+				],
+				"lastStartTime": "2017-09-04 14:47:46",
+				"logFilePath": "task/ts3/20170904144746940.log",
+				"lastSpendSecond": 4,
+				"lastResult": "SUCCEED",
+				"privilege": {
+					"JOB": ["查看", "删除", "修改", "授权", "操作"]
+				}
+			}
+		]
+	},
+	"msg" : "成功了"
+}

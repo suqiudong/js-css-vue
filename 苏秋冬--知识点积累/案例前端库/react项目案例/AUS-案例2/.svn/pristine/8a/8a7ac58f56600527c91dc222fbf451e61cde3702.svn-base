@@ -1,0 +1,6 @@
+{
+  "code": "0",
+  "meta": "",
+  "result": "SELECT * FROM WHERE id='123'",
+  "msg": ""
+}

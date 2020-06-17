@@ -1,0 +1,56 @@
+/**
+ * 对应后端涉及的 API
+ * User: gaogy
+ * Date: 2016/12/09
+ * Time: 11:47
+ */
+
+import xhr from './xhr/'
+import { error } from 'UTIL/notification';
+class ServiceMointorService {
+
+    /**
+     * 获取服务列表查询结果
+     * @returns {{}}
+     */
+    getServiceName () {
+        let serviceName = {};
+        xhr({
+            url: '/ServiceMointor/listName',
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    serviceName = data.result.data;
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        return serviceName;
+    }
+
+
+    /**
+     * 获取监控列表查询结果
+     * @returns {{}}
+     */
+    getServiceMonitorList (mqlOptions) {
+        let monitorList = {};
+        xhr({
+            url: '/LogManager/queryService',
+            data: mqlOptions,
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    monitorList = data.result;
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        return monitorList;
+    }
+
+}
+// 导出实例化对象
+export default new ServiceMointorService()

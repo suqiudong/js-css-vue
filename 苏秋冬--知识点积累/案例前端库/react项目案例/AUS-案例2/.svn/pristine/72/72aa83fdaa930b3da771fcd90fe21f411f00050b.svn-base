@@ -1,0 +1,46 @@
+import React, { Component } from 'react';
+let list = {};
+export default class DataSourceModel extends Component {
+    constructor(props) {
+            super(props);
+        this.addtable = this.addtable.bind(this);
+    }
+    componentWillMount() {
+        (async ()=> {
+            await this.props.ModelManagerList();
+            if (this.props.dataSourceModel.modelList.length > 0) {
+                list = await this.props.dataSourceModel.modelList.rows;
+                console.log(list);
+                debugger;
+            }
+        })()
+
+    }
+    componentDidUpdate() {
+    }
+    addtable() {
+        this.props.history.replace('/dataSourceModel/add');
+    }
+    render() {
+        /*
+        let nodes = list .map(function(list) {
+                    return (<div className="col-md-3">
+                        <a href="javascript:void(0)" > <img src={require('../../assets/img/model.png')} className="modelImage"/> </a>
+                        <p >{list.cName}</p>
+                    </div>);
+                });
+*/
+        return (
+            <div id='dataSourceModel' className="box box-primary">
+              <div className='row'>
+                    <div className='col-md-3'>
+                        <a href='javascript:void(0)' onClick={this.addtable}>
+                            <img src={require('../../assets/img/create_table.png')} alt=""/>
+                        </a>
+                    </div>
+                  {nodes}
+              </div>
+            </div>
+        )
+    }
+}

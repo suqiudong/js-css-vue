@@ -1,0 +1,125 @@
+{
+  "code": "0",
+  "result": {
+    "data": [
+      {
+        "desc": "æ‹¥æœ‰æ•°æ®é›†ã€ä»ªè¡¨æ¿ã€æŠ¥è¡¨ã€ç”¨æˆ·ã€è§’è‰²çš„å¢žåˆ æ”¹æŸ¥ç­‰æƒé™",
+        "privilege": {
+          "ROLE": ["创建", "查看", "修改", "删除"]
+        },
+        "roleName": "超级管理员",
+        "member": [{
+          "userName": "zhangsan",
+          "name": "张三",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "lisi",
+          "name": "李四",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },
+        {
+          "userName": "admin",
+          "name": "admin",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },
+        {
+          "userName": "wangwu",
+          "name": "王五",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        }]
+      },
+      {
+        "desc": "æ‹¥æœ‰æ•°æ®é›†ã€ä»ªè¡¨æ¿ã€æŠ¥è¡¨ã€ç”¨æˆ·ã€è§’è‰²çš„å¢žåˆ æ”¹æŸ¥ç­‰æƒé™",
+        "privilege": {
+          "ROLE": ["创建", "查看", "修改", "删除"]
+        },
+        "roleName": "次级管理员",
+        "member": [{
+          "userName": "wangwu",
+          "name": "王五",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "zhaoliu",
+          "name": "赵六",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "cheng3",
+          "name": "成员3",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "cheng4",
+          "name": "成员4",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        }]
+      },
+      {
+        "desc": "æ‹¥æœ‰æ•°æ®é›†ã€ä»ªè¡¨æ¿ã€æŠ¥è¡¨ã€ç”¨æˆ·ã€è§’è‰²çš„å¢žåˆ æ”¹æŸ¥ç­‰æƒé™",
+        "privilege": {
+          "ROLE": ["创建", "查看", "修改", "删除"]
+        },
+        "roleName": "管理员",
+        "member": [{
+          "userName": "cheng1",
+          "name": "成员1",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "lisi",
+          "name": "李四",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "cheng3",
+          "name": "成员3",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "cheng5",
+          "name": "成员5",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        },{
+          "userName": "cheng6",
+          "name": "成员6",
+          "phoneNo": "12123123123",
+          "email": "4546@qq.com",
+          "department": "事业部",
+          "position": "程序猿"
+        }]
+      }
+    ]
+  },
+  "msg": "错了"
+}

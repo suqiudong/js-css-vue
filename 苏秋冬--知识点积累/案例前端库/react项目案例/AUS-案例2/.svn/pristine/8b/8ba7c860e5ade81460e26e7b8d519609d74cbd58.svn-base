@@ -1,0 +1,378 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "id": "75012",
+        "name": "Dorothy Wilk",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=1102 Sussex Court, street_2=, city=Waco, state=TX, zip_code=76710}, billing={street_1=1102 Sussex Court, street_2=, city=Waco, state=TX, zip_code=76710}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@7aad9b58"
+      },
+      {
+        "id": "17254",
+        "name": "Martin Johnson",
+        "email_preferences": "{email_format=text, frequency=daily, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=158 Jadewood Drive, street_2=Apt 2, city=Gary, state=IN, zip_code=46403}, billing={street_1=4169 Oakwood Lane, street_2=, city=Gary, state=IN, zip_code=46403}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@4ba74434"
+      },
+      {
+        "id": "12532",
+        "name": "Melvin Garcia",
+        "email_preferences": "{email_format=html, frequency=daily, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=1740 Hawks Nest Lane, street_2=, city=Waco, state=TX, zip_code=76710}, billing={street_1=1740 Hawks Nest Lane, street_2=, city=Waco, state=TX, zip_code=76710}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@32f0b5d"
+      },
+      {
+        "id": "42632",
+        "name": "Raymond S. Vestal",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=2913 Chestnut Street, street_2=, city=Menasha, state=WI, zip_code=54952}, billing={street_1=2913 Chestnut Street, street_2=, city=Menasha, state=WI, zip_code=54952}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@31370912"
+      },
+      {
+        "id": "77913",
+        "name": "Betty J. Giambrone",
+        "email_preferences": "{email_format=text, frequency=monthly, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=3303 John Calvin Drive, street_2=, city=Jackson, state=TN, zip_code=38301}, billing={street_1=3303 John Calvin Drive, street_2=, city=Jackson, state=TN, zip_code=38301}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@27562337"
+      },
+      {
+        "id": "38807",
+        "name": "Rebecca T. Johnson",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=1116 Junkin Avenue, street_2=, city=Osceola, state=IN, zip_code=46561}, billing={street_1=1116 Junkin Avenue, street_2=, city=Osceola, state=IN, zip_code=46561}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@5621450d"
+      },
+      {
+        "id": "71843",
+        "name": "David B. Allison",
+        "email_preferences": "{email_format=text, frequency=daily, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=3947 Heavner Avenue, street_2=, city=Jackson, state=TN, zip_code=38301}, billing={street_1=3947 Heavner Avenue, street_2=, city=Jackson, state=TN, zip_code=38301}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@2d2fc977"
+      },
+      {
+        "id": "67099",
+        "name": "Jay N. Weaver",
+        "email_preferences": "{email_format=text, frequency=daily, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=3286 Windmill Road, street_2=, city=Waco, state=TX, zip_code=76710}, billing={street_1=3286 Windmill Road, street_2=, city=Waco, state=TX, zip_code=76710}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@24d93a59"
+      },
+      {
+        "id": "83510",
+        "name": "Carol B. Houser",
+        "email_preferences": "{email_format=html, frequency=never, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=1396 Alexander Drive, street_2=, city=Chicago, state=IL, zip_code=60601}, billing={street_1=1396 Alexander Drive, street_2=, city=Chicago, state=IL, zip_code=60601}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@3200ea6e"
+      },
+      {
+        "id": "48072",
+        "name": "Octaviana Guiterrez",
+        "email_preferences": "{email_format=text, frequency=never, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=4388 Denton Street, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=4388 Denton Street, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@6ed5d80e"
+      },
+      {
+        "id": "89830",
+        "name": "Michelle Coffman",
+        "email_preferences": "{email_format=text, frequency=daily, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=1325 Douglas Dairy Road, street_2=, city=Jackson, state=TN, zip_code=38301}, billing={street_1=1325 Douglas Dairy Road, street_2=, city=Jackson, state=TN, zip_code=38301}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@3d62c0d2"
+      },
+      {
+        "id": "98751",
+        "name": "Heather L. Southerland",
+        "email_preferences": "{email_format=text, frequency=weekly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=4630 Peck Street, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=4630 Peck Street, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@50842ed5"
+      },
+      {
+        "id": "88702",
+        "name": "Diane Lee",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=2796 Southern Avenue, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=2796 Southern Avenue, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@6562ed31"
+      },
+      {
+        "id": "80283",
+        "name": "Angela Perez",
+        "email_preferences": "{email_format=html, frequency=never, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=263 Roy Alley, street_2=, city=Anaheim, state=CA, zip_code=92801}, billing={street_1=263 Roy Alley, street_2=, city=Anaheim, state=CA, zip_code=92801}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@25b74c3b"
+      },
+      {
+        "id": "48153",
+        "name": "Caroline R. Ehlert",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=59 Blagden Alley, street_2=, city=Waco, state=TX, zip_code=76710}, billing={street_1=59 Blagden Alley, street_2=, city=Waco, state=TX, zip_code=76710}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@e787c0f"
+      },
+      {
+        "id": "54362",
+        "name": "David Hallifax",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=1406 Desert Brooms Court, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=1406 Desert Brooms Court, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@7ffb1993"
+      },
+      {
+        "id": "10326",
+        "name": "Annie Sanchez",
+        "email_preferences": "{email_format=text, frequency=never, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=432 Lightning Point Drive, street_2=, city=Chicago, state=IL, zip_code=60601}, billing={street_1=432 Lightning Point Drive, street_2=, city=Chicago, state=IL, zip_code=60601}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@d026838"
+      },
+      {
+        "id": "13106",
+        "name": "Lindsey Jarrett",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=1606 Blair Court, street_2=, city=Menasha, state=WI, zip_code=54952}, billing={street_1=1606 Blair Court, street_2=, city=Menasha, state=WI, zip_code=54952}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@124b2b37"
+      },
+      {
+        "id": "90326",
+        "name": "Alyssa R. Banks",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=4726 Nancy Street, street_2=, city=Osceola, state=IN, zip_code=46561}, billing={street_1=4726 Nancy Street, street_2=, city=Osceola, state=IN, zip_code=46561}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@5f9ea575"
+      },
+      {
+        "id": "69735",
+        "name": "Tracy Wong",
+        "email_preferences": "{email_format=text, frequency=monthly, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=2890 Romines Mill Road, street_2=, city=Clearwater, state=FL, zip_code=34623}, billing={street_1=2890 Romines Mill Road, street_2=, city=Clearwater, state=FL, zip_code=34623}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@788e0894"
+      },
+      {
+        "id": "54288",
+        "name": "Julia Allen",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=3548 Gladwell Street, street_2=, city=Saint Louis, state=MO, zip_code=63108}, billing={street_1=3548 Gladwell Street, street_2=, city=Saint Louis, state=MO, zip_code=63108}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@66d3fc15"
+      },
+      {
+        "id": "94802",
+        "name": "William S. Pollard",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=3012 Emerson Road, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=3012 Emerson Road, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@2d0a616b"
+      },
+      {
+        "id": "17307",
+        "name": "Mohammed B. Sanderlin",
+        "email_preferences": "{email_format=html, frequency=never, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=2615 Center Avenue, street_2=, city=Saint Louis, state=MO, zip_code=63108}, billing={street_1=2615 Center Avenue, street_2=, city=Saint Louis, state=MO, zip_code=63108}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@795dcb2"
+      },
+      {
+        "id": "74640",
+        "name": "Kenneth E. Pendelton",
+        "email_preferences": "{email_format=text, frequency=monthly, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=4216 Irving Street, street_2=, city=Saint Louis, state=MO, zip_code=63108}, billing={street_1=4216 Irving Street, street_2=, city=Saint Louis, state=MO, zip_code=63108}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@fd7be7c"
+      },
+      {
+        "id": "54954",
+        "name": "Michael Carnes",
+        "email_preferences": "{email_format=html, frequency=never, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=4333 Park Road, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=4333 Park Road, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@769dc8c7"
+      },
+      {
+        "id": "93508",
+        "name": "Olivia Powers",
+        "email_preferences": "{email_format=text, frequency=never, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=2133 Hart Country Lane, street_2=, city=Jackson, state=TN, zip_code=38301}, billing={street_1=2133 Hart Country Lane, street_2=, city=Jackson, state=TN, zip_code=38301}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@8e2ee46"
+      },
+      {
+        "id": "35241",
+        "name": "Craig S. Motley",
+        "email_preferences": "{email_format=html, frequency=daily, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=1803 Powder House Road, street_2=, city=Chicago, state=IL, zip_code=60601}, billing={street_1=1803 Powder House Road, street_2=, city=Chicago, state=IL, zip_code=60601}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@213bc3a4"
+      },
+      {
+        "id": "63835",
+        "name": "Adolfo A. Lieb",
+        "email_preferences": "{email_format=html, frequency=daily, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=700 Davidson Street, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=700 Davidson Street, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@132dbda1"
+      },
+      {
+        "id": "63705",
+        "name": "Meghan Dickinson",
+        "email_preferences": "{email_format=text, frequency=daily, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=2253 Watson Lane, street_2=, city=Chicago, state=IL, zip_code=60601}, billing={street_1=2253 Watson Lane, street_2=, city=Chicago, state=IL, zip_code=60601}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@bee94f3"
+      },
+      {
+        "id": "42109",
+        "name": "Pamela C. McMillan",
+        "email_preferences": "{email_format=html, frequency=daily, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=2843 Rockford Road, street_2=, city=Menasha, state=WI, zip_code=54952}, billing={street_1=2843 Rockford Road, street_2=, city=Menasha, state=WI, zip_code=54952}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@14e1db16"
+      },
+      {
+        "id": "76678",
+        "name": "Raymond K. Long",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=3616 John Avenue, street_2=, city=Osceola, state=IN, zip_code=46561}, billing={street_1=3616 John Avenue, street_2=, city=Osceola, state=IN, zip_code=46561}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@6b380ccd"
+      },
+      {
+        "id": "70420",
+        "name": "Terri W. Katz",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=1060 Park Street, street_2=, city=Saint Louis, state=MO, zip_code=63108}, billing={street_1=1060 Park Street, street_2=, city=Saint Louis, state=MO, zip_code=63108}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@158674be"
+      },
+      {
+        "id": "64109",
+        "name": "Jo Walsh",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=3199 Owen Lane, street_2=, city=Menasha, state=WI, zip_code=54952}, billing={street_1=3199 Owen Lane, street_2=, city=Menasha, state=WI, zip_code=54952}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@6ab033f1"
+      },
+      {
+        "id": "38715",
+        "name": "Mary M. Henderson",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=471 Reppert Coal Road, street_2=, city=Chicago, state=IL, zip_code=60601}, billing={street_1=471 Reppert Coal Road, street_2=, city=Chicago, state=IL, zip_code=60601}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@70136cda"
+      },
+      {
+        "id": "66109",
+        "name": "Gilberto Franklin",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=4495 McKinley Avenue, street_2=, city=Saint Louis, state=MO, zip_code=63108}, billing={street_1=4495 McKinley Avenue, street_2=, city=Saint Louis, state=MO, zip_code=63108}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@5be64871"
+      },
+      {
+        "id": "62346",
+        "name": "Jeanetta Aquino",
+        "email_preferences": "{email_format=text, frequency=never, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=1131 Woodridge Lane, street_2=, city=Clearwater, state=FL, zip_code=34623}, billing={street_1=1131 Woodridge Lane, street_2=, city=Clearwater, state=FL, zip_code=34623}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@7de3e437"
+      },
+      {
+        "id": "10271",
+        "name": "Eric Cobb",
+        "email_preferences": "{email_format=text, frequency=never, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=1241 Cherry Ridge Drive, street_2=, city=Providence, state=RI, zip_code=02906}, billing={street_1=1241 Cherry Ridge Drive, street_2=, city=Providence, state=RI, zip_code=02906}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@16277fc1"
+      },
+      {
+        "id": "79468",
+        "name": "John Healy",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=2512 Java Lane, street_2=, city=Clearwater, state=FL, zip_code=34623}, billing={street_1=2512 Java Lane, street_2=, city=Clearwater, state=FL, zip_code=34623}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@7d39a463"
+      },
+      {
+        "id": "72104",
+        "name": "Andrew Wyatt",
+        "email_preferences": "{email_format=html, frequency=never, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=3826 Jefferson Street, street_2=, city=Jackson, state=TN, zip_code=38301}, billing={street_1=3826 Jefferson Street, street_2=, city=Jackson, state=TN, zip_code=38301}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@14f5de75"
+      },
+      {
+        "id": "21216",
+        "name": "Elda Fanning",
+        "email_preferences": "{email_format=html, frequency=daily, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=3493 Rose Street, street_2=, city=Chicago, state=IL, zip_code=60601}, billing={street_1=3493 Rose Street, street_2=, city=Chicago, state=IL, zip_code=60601}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@76555280"
+      },
+      {
+        "id": "71267",
+        "name": "Robin T. Vanauken",
+        "email_preferences": "{email_format=text, frequency=weekly, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=4295 Calvert Street, street_2=, city=Waco, state=TX, zip_code=76710}, billing={street_1=4295 Calvert Street, street_2=, city=Waco, state=TX, zip_code=76710}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@5b21e2fc"
+      },
+      {
+        "id": "17296",
+        "name": "Michael B. Hill",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=true, surveys=true}}",
+        "addresses": "{shipping={street_1=4480 Seneca Drive, street_2=, city=Jersey City, state=NJ, zip_code=07305}, billing={street_1=4480 Seneca Drive, street_2=, city=Jersey City, state=NJ, zip_code=07305}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@6b0b4f47"
+      },
+      {
+        "id": "31457",
+        "name": "David Bryant",
+        "email_preferences": "{email_format=text, frequency=weekly, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=2273 Hamill Avenue, street_2=, city=Clearwater, state=FL, zip_code=34623}, billing={street_1=2273 Hamill Avenue, street_2=, city=Clearwater, state=FL, zip_code=34623}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@51373225"
+      },
+      {
+        "id": "77672",
+        "name": "Randy Peterson",
+        "email_preferences": "{email_format=text, frequency=monthly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=1305 Matthews Street, street_2=, city=Clearwater, state=FL, zip_code=34623}, billing={street_1=1305 Matthews Street, street_2=, city=Clearwater, state=FL, zip_code=34623}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@daaabd1"
+      },
+      {
+        "id": "82429",
+        "name": "Justine Roth",
+        "email_preferences": "{email_format=text, frequency=monthly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=2766 Hill Haven Drive, street_2=, city=Waco, state=TX, zip_code=76710}, billing={street_1=2766 Hill Haven Drive, street_2=, city=Waco, state=TX, zip_code=76710}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@59c89e9a"
+      },
+      {
+        "id": "86050",
+        "name": "Sheera McNeil",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=29719 Lamkin Road, street_2=, city=Saint Louis, state=MO, zip_code=63108}, billing={street_1=29719 Lamkin Road, street_2=, city=Saint Louis, state=MO, zip_code=63108}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@68889393"
+      },
+      {
+        "id": "71230",
+        "name": "Alicia C. Torrence",
+        "email_preferences": "{email_format=text, frequency=never, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=4669 Ashmor Drive, street_2=, city=Anaheim, state=CA, zip_code=92801}, billing={street_1=4669 Ashmor Drive, street_2=, city=Anaheim, state=CA, zip_code=92801}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@c622bd"
+      },
+      {
+        "id": "84324",
+        "name": "Mae White",
+        "email_preferences": "{email_format=html, frequency=weekly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=4111 Wayside Lane, street_2=, city=Waco, state=TX, zip_code=76710}, billing={street_1=4111 Wayside Lane, street_2=, city=Waco, state=TX, zip_code=76710}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@586ae557"
+      },
+      {
+        "id": "36656",
+        "name": "Anthony A. Davis",
+        "email_preferences": "{email_format=html, frequency=monthly, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=3737 Pinewood Drive, street_2=, city=Menasha, state=WI, zip_code=54952}, billing={street_1=3737 Pinewood Drive, street_2=, city=Menasha, state=WI, zip_code=54952}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@454b8c8e"
+      },
+      {
+        "id": "91215",
+        "name": "Richard Baird",
+        "email_preferences": "{email_format=html, frequency=never, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=2393 Ralph Drive, street_2=, city=Menasha, state=WI, zip_code=54952}, billing={street_1=2393 Ralph Drive, street_2=, city=Menasha, state=WI, zip_code=54952}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@69738bbf"
+      },
+      {
+        "id": "68381",
+        "name": "Beatrice Goodwin",
+        "email_preferences": "{email_format=text, frequency=daily, categories={promos=true, surveys=false}}",
+        "addresses": "{shipping={street_1=24798 Billings Lane, street_2=, city=Jackson, state=TN, zip_code=38301}, billing={street_1=24798 Billings Lane, street_2=, city=Jackson, state=TN, zip_code=38301}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@58118fe6"
+      },
+      {
+        "id": "50951",
+        "name": "Elaine Meikle",
+        "email_preferences": "{email_format=text, frequency=monthly, categories={promos=false, surveys=false}}",
+        "addresses": "{shipping={street_1=3383 Bastin Drive, street_2=, city=Anaheim, state=CA, zip_code=92801}, billing={street_1=3383 Bastin Drive, street_2=, city=Anaheim, state=CA, zip_code=92801}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@57de99ee"
+      },
+      {
+        "id": "36925",
+        "name": "Maria Calderon",
+        "email_preferences": "{email_format=text, frequency=monthly, categories={promos=false, surveys=true}}",
+        "addresses": "{shipping={street_1=986 Austin Secret Lane, street_2=, city=Jackson, state=TN, zip_code=38301}, billing={street_1=986 Austin Secret Lane, street_2=, city=Jackson, state=TN, zip_code=38301}}",
+        "orders": "com.sugon.ausmpp.jdbc.AusMppArray@4e685067"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+"code" : "0",
+"msg" : "上传失败",
+"result":{
+  "pluginName":"plugin_for_typhoon",
+  "jarName":"jar包名",
+  "description":"这里是描述。。。这里是描述。。。这里是描述。。。这里是描述。。。这里是描述。。。这里是描述。。。这里是描述。。。这里是描述。。。",
+  "owner":"张三",
+  "developer":"李四",
+  "version":"1.0"
+}
+}

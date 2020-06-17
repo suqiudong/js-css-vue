@@ -1,0 +1,152 @@
+/**
+ * 对应后端涉及的 API
+ * User: gaogy
+ * Date: 2016/12/09
+ * Time: 11:47
+ */
+
+import xhr from './xhr/'
+import { success, error } from 'UTIL/notification';
+class ReportService {
+
+    /**
+     * 获取报表列表请求逻辑
+     * @returns {{}}
+     */
+    readReport() {
+        let reportList = {};
+        xhr({
+            url: '/ReportManager/list',
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    reportList = data;
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        return reportList;
+    }
+
+    /**
+     * 报表删除事件
+     * @param reportId
+     */
+    delReport(reportId) {
+        var isDelSuccess = false;
+
+        xhr({
+            url: '/ReportManager/delete',
+            data: {
+                names: reportId
+            },
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    success('删除成功！');
+                    isDelSuccess = true;
+                    window.location.replace('#/report');
+                } else {
+                    for (let key in data.result.status) {
+                        error('报表[' + key + ']删除失败！' + data.result.status[key]);
+                    }
+                }
+            }
+        });
+
+        if (isDelSuccess) {
+            return reportId;
+        }
+    }
+
+    /**
+     * MQL查询事件
+     * @param options
+     */
+    mqlSearch(mqlOptions) {
+        let mqlResult = {};
+        xhr({
+            url: '/ReportManager/search',
+            data: mqlOptions,
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    mqlResult = data;
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+
+        return mqlResult;
+    }
+
+    /**
+     * 报表保存事件
+     * @param reportName
+     */
+    getReport(reportName) {
+        let report = {};
+        xhr({
+            url: '/ReportManager/get',
+            data: {
+                reportName: reportName
+            },
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    report = data.result.detail;
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+        return report;
+    }
+
+    /**
+     * 报表新建事件
+     * @param options
+     */
+    addReport(reportOptions) {
+        xhr({
+            url: '/ReportManager/create',
+            data: reportOptions,
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    success('创建成功！');
+                    window.location.replace('#/report');
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+
+        return reportOptions;
+    }
+
+    /**
+     * 报表更新事件
+     * @param options
+     */
+    updateReport(reportOptions) {
+        xhr({
+            url: '/ReportManager/modify',
+            data: reportOptions,
+            async: false,
+            success: function (data) {
+                if (data.code == '0') {
+                    success('更新成功！');
+                    window.location.replace('#/report');
+                } else {
+                    error(data.msg);
+                }
+            }
+        });
+    }
+}
+
+// 导出实例化对象
+export default new ReportService()

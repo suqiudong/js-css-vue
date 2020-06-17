@@ -1,0 +1,23 @@
+1：ant-design-vue配置主题颜色
+      （1）安装npm install less less-loader --save-dev
+      （2）找到build文件夹下的utils.js文件，找到function generateLoaders，修改return部分
+               注释less部分，替换为：
+	less: generateLoaders('less', {
+
+	    	modifyVars: {
+	
+    	// 这三个地方都设置成你需要的主题色
+    
+			'primary-color': '#d10100',
+    
+			'link-color': '#d10100',
+    
+			'border-radius-base': '2px',
+  
+		},
+  
+		javascriptEnabled: true,
+  
+	}),
+        （3）在main.js文件中，修改引入的css文件，import 'ant-design-vue/dist/antd.css'改为import 'ant-design-vue/dist/antd.less'
+        （4）重新执行npm run dev

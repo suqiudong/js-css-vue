@@ -1,0 +1,26 @@
+{
+  "code": "0",
+  "result": {
+    "detail": {
+      "pluginName": "plugin_for_typhoon",
+      "jarName": "jar包名",
+      "collectors": [
+        {
+          "collectorName": "collector2",
+          "clazzName": "com.sugon.aus.yyy",
+          "description": "这里是描述信息这里是描述信息这里是描述信息这里是描述信息，这里是描述信息这里是描述信息这里是描述信息"
+        },
+        {
+          "collectorName": "collector1",
+          "clazzName": "com.sugon.aus.xxx",
+          "description": "functional descriptions for the collector,functional descriptions for the collector"
+        }
+      ],
+      "description": "描述",
+      "owner": "所有者",
+      "developer": "开发者",
+      "time": "安装时间",
+      "version": "1.0"
+    }
+  }
+}

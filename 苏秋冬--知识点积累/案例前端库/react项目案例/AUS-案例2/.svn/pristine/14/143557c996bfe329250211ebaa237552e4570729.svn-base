@@ -1,0 +1,144 @@
+/**
+ * tree结构和表信息
+ * User: xiongjie
+ * Date: 2017/8/5
+ * Time: 15:45
+ * */
+
+import React, { Component } from 'react';
+import createList from 'UTIL/baseList';
+import dataSourceModelService from 'SERVICE/dataSourceModelService';
+
+export default class Tree extends Component {
+    constructor(props) {
+        super(props);
+        this.towTable = this.towTable.bind(this);
+        this.readTabel = this.readTabel.bind(this);
+        this.tableData = this.tableData.bind(this);
+    }
+    towTable(defaultData, tableModel) {
+        tableModel.model = [];
+        let deNodes = defaultData.data[0].children;
+        // 生成二级tree
+        $(' #tree').tree(defaultData);
+
+        // 生成表单
+        this.tableData();
+
+        $(' #tree').tree('collapseAll');
+
+        $(' #tree').tree({
+            onClick: (node)=> {
+                // 判断点击是否生成tree
+                if (node.table)this.tableData(node.table, node.text);
+                if (node.children) {
+                    if (node.children.length <= 0) {
+                        this.readTabel(node, deNodes, tableModel);
+                    } else {
+                        return;
+                    }
+                }
+                // 添加table到model
+                if (node.table) {
+                    node.table.map((data)=> {
+                        tableModel.model.push(data);
+                    });
+                }
+            }
+        });
+
+    }
+    // 生成三级tree
+    readTabel(node, deNodes, tableModel) {
+        // 点击二级tree发送请求获取DataSourceTabel
+        let dataSource = {
+            dataSourceName: node.text,
+            offset: 1,
+            num: 10000,
+            tableNameFilter: ''
+        };
+
+        // 异步请求数据
+        (async () => {
+            let DataSourceDetail = await dataSourceModelService.getDataSource(dataSource);
+            if (DataSourceDetail) {
+                let DataSourceTabel = DataSourceDetail.schemaModule;
+                tableModel.appen = [];
+                for (let key in DataSourceTabel) {
+                    DataSourceTabel[key].map(function(data) {
+                        data.dataSourceName = DataSourceDetail.dataSourceName;
+                        data.owner = DataSourceDetail.owner;
+                        data.dataBaseName = key;
+                        data.dataSourceType = DataSourceDetail.dataSourceType;
+                        data.connectionConfig = DataSourceDetail.connectionConfig;
+                        tableModel.tables.push(data);
+                    });
+                    tableModel.appen.push({
+                        text: key,
+                        table: DataSourceTabel[key],
+                        [key]: DataSourceTabel[key]
+                    })
+                }
+                // 把数据添加defaultData中；
+                for (let key in deNodes) {
+                    if (deNodes[key].text == node.text) {
+                        deNodes[key].children = tableModel.appen;
+                    }
+                }
+                // 节点添加子元素
+                $(' #tree').tree('append', {
+                    parent: node.target,
+                    data: tableModel.appen
+                });
+                this.props.ReceiveDate(tableModel);
+            }
+        })();
+    }
+
+    // 点击三级tree生成table
+    tableData(data, node) {
+        data = data || [{table: ''}];
+        // 构造列表配置项
+        let tableConfig = {};
+        tableConfig.id = 'tableData';
+        tableConfig.scrollX = false;
+        tableConfig.columns = [
+            {data: 'tableName',
+                render(data) {
+                    // 如果传入的值为空，返回，不为空数据表名添加一起
+                    if (data == undefined || node == undefined) {
+                        return ;
+                    } else {
+                        let tableName = node + '.' + data;
+                        // return tableName;
+                        return '<p tableId=' + tableName + '>' + tableName + '</p>';
+                    }
+                },
+                'defaultContent': '-'}
+        ];
+        tableConfig.order = [[0, 'desc']];
+        // 获取列表内数据列
+        tableConfig.data = data;
+
+        // 生成列表
+        createList(tableConfig);
+        // 绑定拖拽事件
+        $('#tableData').on('mouseenter', (e)=>{
+            e.preventDefault();
+            this.props.draggable();
+        });
+    }
+    render() {
+        return <div className='col-md-4'>
+            <ul id='tree'></ul>
+            <table id='tableData' className="table table-striped table-bordered" >
+                <thead>
+                <tr>
+                    <th>表信息:</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    }
+}
+

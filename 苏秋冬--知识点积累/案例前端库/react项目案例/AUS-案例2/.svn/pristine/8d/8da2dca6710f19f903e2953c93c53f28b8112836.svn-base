@@ -1,0 +1,26 @@
+{
+  "code": 0,
+  "result": {
+    "data": [
+      {
+        "appName": "search",
+        "frequency": "3次",
+        "monitorStatus": "AVAILABLE"
+      },
+      {
+        "appName": "ausmpp",
+        "monitorStatus": "AVAILABLE"
+      },
+      {
+        "appName": "view",
+        "frequency": "5次",
+        "monitorStatus": "AVAILABLE"
+      },
+      {
+        "appName": "datain",
+        "frequency": "52次",
+        "monitorStatus": "AVAILABLE"
+      }
+    ]
+  }
+}
